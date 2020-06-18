@@ -11,10 +11,10 @@ var appId = "21bc4c2c"
 var appKey = "5729809d1a9d20acc68325bd3944c334"
 var searchTerm = "&q=chicken";
 
-var queryURL = ("https://api.edamam.com/search?app_id=21bc4c2c&app_key=5729809d1a9d20acc68325bd3944c334" + searchTerm);
+var queryrecipeURL = ("https://api.edamam.com/search?app_id=21bc4c2c&app_key=5729809d1a9d20acc68325bd3944c334" + searchTerm);
 
     $.ajax({
-        url: queryURL,
+        url: queryrecipeURL,
         method: "GET"
       }).then(function(response) {
           console.log(response);
