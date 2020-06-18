@@ -28,7 +28,7 @@
     ></script>
   </head>
   <body>
-      <!-- header -->
+    <!-- header -->
     <div class="jumbotron">
       <h1 class="display-4">Food Forecaster</h1>
     </div>
@@ -38,7 +38,8 @@
         <h2>Please select all dietary restrictions that apply:</h2>
         <div class="col-md-12">
           <div class="form-check form-check-inline">
-            <input id="vegan"
+            <input
+              id="vegan"
               class="form-check-input"
               type="checkbox"
               value="option1"
@@ -48,7 +49,8 @@
         </div>
         <div class="col-md-12">
           <div class="form-check form-check-inline">
-            <input id="vegetarian"
+            <input
+              id="vegetarian"
               class="form-check-input"
               type="checkbox"
               value="option1"
@@ -60,7 +62,8 @@
         </div>
         <div class="col-md-12">
           <div class="form-check form-check-inline">
-            <input id="peanut-allergy"
+            <input
+              id="peanut-allergy"
               class="form-check-input"
               type="checkbox"
               value="option1"
@@ -72,7 +75,8 @@
         </div>
         <div class="col-md-12">
           <div class="form-check form-check-inline">
-            <input id="tree-nut-allergy"
+            <input
+              id="tree-nut-allergy"
               class="form-check-input"
               type="checkbox"
               value="option1"
@@ -84,7 +88,8 @@
         </div>
         <div class="col-md-12">
           <div class="form-check form-check-inline">
-            <input id="dairy-intolerance"
+            <input
+              id="dairy-intolerance"
               class="form-check-input"
               type="checkbox"
               value="option1"
@@ -99,21 +104,26 @@
       <div class="row">
         <div class="col-md-12">
           <form class="form-inline">
-            <input id="search-bar"
+            <input
+              id="search-bar"
               class="form-control mr-sm-2"
               type="search"
               placeholder="Search"
               aria-label="Search"
             />
-            <button id="searchBtn" class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            <button
+              id="searchBtn"
+              class="btn btn-outline-success my-2 my-sm-0"
+              type="submit"
+            >
               Search City
             </button>
           </form>
         </div>
       </div>
     </div>
-<!-- second page container -->
-<!-- weather card to pull in openweather -->
+    <!-- second page container -->
+    <!-- weather card to pull in openweather -->
     <div class="container" id="secondPage">
       <div class="row">
         <div class="col-md-10">
@@ -131,7 +141,7 @@
       <!-- recipes card to pull in edamam -->
       <div class="row">
         <div class="col-md-12">
-          <div class="card">
+          <div class="card" id="recipe-card">
             <div class="card-header">
               <h2>Recipes</h2>
             </div>
@@ -147,7 +157,33 @@
     </div>
     <!-- recipes page -->
     <div class="container" id="pageThree">
-        <button type="button" class="btn btn-primary">Go back to recipes page</button>
+      <div class="card">
+        <div class="card-header">
+          Recipe Name
+        </div>
+        <!-- hardcoded test recipe -->
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+              <h5>Ingredients</h5>
+            <ul>
+                <li><h6>milk</h6></li>
+                <li><h6>eggs</h6></li>
+                <li><h6>butter</h6></li>
+                <li><h6>heavy cream</h6></li>
+            </ul>
+            <h5>Step by step</h5>
+            <ol>
+                <li>mix milk, butter, eggs, and heavy cream in a bowl</li>
+                <li>pour into greased pan</li>
+                <li>bake for 20 minutes at 400 degrees</li>
+                <li>pour icing over once cooled/li>
+            </ol>
+          </blockquote>
+          <button type="button" class="btn btn-primary" id="goBackBtn">
+            Go back to recipes page
+          </button>
+        </div>
+      </div>
     </div>
   </body>
   <script
