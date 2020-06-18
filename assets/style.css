@@ -1,34 +1,97 @@
-.dietary-restriction{
-
-}
-
-.weather-forecast{
-    display: none;
-}
-
-.recipes{
-    display: none;
-}
-
-.recipe-page {
-    display: none;
-}
-
+/* Global classes */
 h1{
     text-align: center;
 }
+
+/* First Page Classes & IDs*/
 #firstPage{
-    
+
 }
+
+#vegan{
+
+}
+
+#vegetarian{
+
+}
+
+#peanut-allergy{
+
+}
+
+#tree-nut-allergy{
+
+}
+
+#dairy-intolerance{
+
+}
+
 #search-bar{
   
 }
 
 #searchBtn{
+
+}
+
+/* Second Page Classes & IDs */
+
+#secondPage{
+    display: ;
+}
+
+#currentCity{
+
+}
+
+#temperature{
+
+}
+
+#humidity{
+
+}
+
+#windspeed{
+
+}
+
+#UVIndex {
+
+}
+
+#recipeList{
+
+}
+
+.list-recipes{
     
 }
 
+<<<<<<< HEAD
 .card-header {
     text-align: center;
 }
 
+=======
+
+
+/* Third Page Classes & IDs */
+
+#thirdPage{
+    display: none;
+}
+
+
+
+
+.list-recipes{
+
+}
+
+#recipeList{
+
+}
+>>>>>>> 593ce9349416e21cf7aca11f52b269b6b9a9a860
