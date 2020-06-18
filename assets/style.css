@@ -39,7 +39,7 @@ h1{
 /* Second Page Classes & IDs */
 
 #secondPage{
-    display: ;
+    
 }
 
 #currentCity{
@@ -68,6 +68,10 @@ h1{
 
 .list-recipes{
     
+}
+
+.card-header {
+    text-align: center;
 }
 
 
