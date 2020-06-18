@@ -2,10 +2,22 @@
 //Application Id: 1dd4c6ab
 $(document).ready(function () {
 
-  $("#search").on("click", citySearch);
+    var restrictions = []
+
+    restrictions.push($(".list").text() +" ")
+    console.log(restrictions)
+
+
+
+  //$("#search").on("click", citySearch);
 
   function citySearch(event) {
     event.preventDefault()
+
+    //storing dietary restrictions as a variable
+    
+    
+
     var city = $("#city-search").val();
     // var queryURLCurrent =
     //   "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -43,3 +55,12 @@ $(document).ready(function () {
     });
   }
 });
+// <!-- <ul>
+//         <li class = "list" id = "1">Test1</li>
+//         <li class = "list" id = "2">Test2</li>
+//         <li class = "list" id = "3">Test3</li>
+//         <li class = "list" id = "4">Test4</li>
+//     </ul>
+//     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+//     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+//     <script src="script.js"></script> -->
