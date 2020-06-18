@@ -1,0 +1,90 @@
+/* Global classes */
+h1{
+    text-align: center;
+}
+
+/* First Page Classes & IDs*/
+#firstPage{
+
+}
+
+#vegan{
+
+}
+
+#vegetarian{
+
+}
+
+#peanut-allergy{
+
+}
+
+#tree-nut-allergy{
+
+}
+
+#dairy-intolerance{
+
+}
+
+#search-bar{
+  
+}
+
+#searchBtn{
+
+}
+
+/* Second Page Classes & IDs */
+
+#secondPage{
+    display: ;
+}
+
+#currentCity{
+
+}
+
+#temperature{
+
+}
+
+#humidity{
+
+}
+
+#windspeed{
+
+}
+
+#UVIndex {
+
+}
+
+#recipeList{
+
+}
+
+.list-recipes{
+    
+}
+
+
+
+/* Third Page Classes & IDs */
+
+#thirdPage{
+    display: none;
+}
+
+
+
+
+.list-recipes{
+
+}
+
+#recipeList{
+
+}
