@@ -28,12 +28,14 @@
     ></script>
   </head>
   <body>
+      <!-- header -->
     <div class="jumbotron">
       <h1 class="display-4">Food Forecaster</h1>
     </div>
+    <!-- checkboxes for dietary restrictions -->
     <div class="container" id="firstPage">
       <div class="row">
-          <h2>Please select all dietary restrictions that apply: </h2>
+        <h2>Please select all dietary restrictions that apply:</h2>
         <div class="col-md-12">
           <div class="form-check form-check-inline">
             <input
@@ -98,6 +100,7 @@
           </div>
         </div>
       </div>
+      <!-- search for city input -->
       <div class="row">
         <div class="col-md-12">
           <form class="form-inline">
@@ -114,9 +117,38 @@
         </div>
       </div>
     </div>
-
-    <div class="container">
-        
+<!-- second page container -->
+<!-- weather card to pull in openweather -->
+    <div class="container" id="secondPage">
+      <div class="row">
+        <div class="col-md-10">
+          <div class="card">
+            <div class="card-body">
+              <h3><span id="currentCity"></span></h3>
+              <p>Temperature: <span id="temperature"></span></p>
+              <p>Humidity: <span id="humidity"></span></p>
+              <p>Wind Speed: <span id="windspeed"></span></p>
+              <p>UV Index: <span id="UVIndex"></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- recipes card to pull in edamam -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h2>Recipes</h2>
+            </div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0"></blockquote>
+            </div>
+          </div>
+        </div>
+        <div>
+          <ul id="recipeList" class="list-recipes"></ul>
+        </div>
+      </div>
     </div>
   </body>
   <script
