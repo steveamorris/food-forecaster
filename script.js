@@ -21,8 +21,7 @@ var queryURL = ("https://api.edamam.com/search?app_id=21bc4c2c&app_key=5729809d1
           
       });
 
-});
-$(document).ready(function () {
+
 
   $("#searchBtn").on("click", citySearch);
 
