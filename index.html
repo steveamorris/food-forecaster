@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/style.css" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -28,18 +28,20 @@
     ></script>
   </head>
   <body>
+    <!-- header -->
     <div class="jumbotron">
       <h1 class="display-4">Food Forecaster</h1>
     </div>
+    <!-- checkboxes for dietary restrictions -->
     <div class="container" id="firstPage">
       <div class="row">
-          <h2>Please select all dietary restrictions that apply: </h2>
+        <h2>Please select all dietary restrictions that apply:</h2>
         <div class="col-md-12">
           <div class="form-check form-check-inline">
             <input
+              id="vegan"
               class="form-check-input"
               type="checkbox"
-              id="inlineCheckbox1"
               value="option1"
             />
             <label class="form-check-label" for="inlineCheckbox1">Vegan</label>
@@ -48,9 +50,9 @@
         <div class="col-md-12">
           <div class="form-check form-check-inline">
             <input
+              id="vegetarian"
               class="form-check-input"
               type="checkbox"
-              id="inlineCheckbox1"
               value="option1"
             />
             <label class="form-check-label" for="inlineCheckbox1"
@@ -61,9 +63,9 @@
         <div class="col-md-12">
           <div class="form-check form-check-inline">
             <input
+              id="peanut-allergy"
               class="form-check-input"
               type="checkbox"
-              id="inlineCheckbox1"
               value="option1"
             />
             <label class="form-check-label" for="inlineCheckbox1"
@@ -74,9 +76,9 @@
         <div class="col-md-12">
           <div class="form-check form-check-inline">
             <input
+              id="tree-nut-allergy"
               class="form-check-input"
               type="checkbox"
-              id="inlineCheckbox1"
               value="option1"
             />
             <label class="form-check-label" for="inlineCheckbox1"
@@ -87,9 +89,9 @@
         <div class="col-md-12">
           <div class="form-check form-check-inline">
             <input
+              id="dairy-intolerance"
               class="form-check-input"
               type="checkbox"
-              id="inlineCheckbox1"
               value="option1"
             />
             <label class="form-check-label" for="inlineCheckbox1"
@@ -98,25 +100,90 @@
           </div>
         </div>
       </div>
+      <!-- search for city input -->
       <div class="row">
         <div class="col-md-12">
           <form class="form-inline">
             <input
+              id="search-bar"
               class="form-control mr-sm-2"
               type="search"
               placeholder="Search"
               aria-label="Search"
             />
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            <button
+              id="searchBtn"
+              class="btn btn-outline-success my-2 my-sm-0"
+              type="submit"
+            >
               Search City
             </button>
           </form>
         </div>
       </div>
     </div>
-
-    <div class="container">
-        
+    <!-- second page container -->
+    <!-- weather card to pull in openweather -->
+    <div class="container" id="secondPage">
+      <div class="row">
+        <div class="col-md-10">
+          <div class="card">
+            <div class="card-body">
+              <h3><span id="currentCity"></span></h3>
+              <p>Temperature: <span id="temperature"></span></p>
+              <p>Humidity: <span id="humidity"></span></p>
+              <p>Wind Speed: <span id="windspeed"></span></p>
+              <p>UV Index: <span id="UVIndex"></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- recipes card to pull in edamam -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card" id="recipe-card">
+            <div class="card-header">
+              <h2>Recipes</h2>
+            </div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0"></blockquote>
+            </div>
+          </div>
+        </div>
+        <div>
+          <ul id="recipeList" class="list-recipes"></ul>
+        </div>
+      </div>
+    </div>
+    <!-- recipes page -->
+    <div class="container" id="pageThree">
+      <div class="card">
+        <div class="card-header">
+          Recipe Name
+        </div>
+        <!-- hardcoded test recipe -->
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+              <h5>Ingredients</h5>
+            <ul>
+                <li><h6>milk</h6></li>
+                <li><h6>eggs</h6></li>
+                <li><h6>butter</h6></li>
+                <li><h6>heavy cream</h6></li>
+            </ul>
+            <h5>Step by step</h5>
+            <ol>
+                <li>mix milk, butter, eggs, and heavy cream in a bowl</li>
+                <li>pour into greased pan</li>
+                <li>bake for 20 minutes at 400 degrees</li>
+                <li>pour icing over once cooled/li>
+            </ol>
+          </blockquote>
+          <button type="button" class="btn btn-primary" id="goBackBtn">
+            Go back to recipes page
+          </button>
+        </div>
+      </div>
     </div>
   </body>
   <script
