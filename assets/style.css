@@ -3,8 +3,20 @@ h1{
     text-align: center;
 }
 
+<<<<<<< HEAD
 .container {
     font-family: 'Noto Serif JP', serif;;
+=======
+.h2text {
+    align-content: center;
+    padding-bottom: 20px;
+}
+
+#banner{
+    background-color: paleturquoise;
+    background-image: url(assets/images/testfoodlogo.png);
+    background-size: cover;
+>>>>>>> 498beb42c8f5b403d916b2455006ee7ea698bdcd
 }
 
 
@@ -13,7 +25,18 @@ h1{
 
 }
 
+#logo{
+    text-align: center;
+    height: 250px;
+    width: 250px;
+}
     /* Check boxes for dietary restrictions */
+
+.checkboxes{
+    text-align: justify;
+    padding: 10px;
+}
+
 #vegan{
 
 }
@@ -39,14 +62,19 @@ h1{
   
 }
 
-#searchBtn{
+#searchBtn:hover{
+    background-color:paleturquoise ;
+    color: black;
+}
 
+#searchBtn{
+    color: darkslategray;
 }
 
 /* Second Page Classes & IDs */
 
 #secondPage{
-    
+    display: none;
 }
 
     /* Weather box that displays the current weather */
