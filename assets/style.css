@@ -3,6 +3,10 @@ h1{
     text-align: center;
 }
 
+<<<<<<< HEAD
+.container {
+    font-family: 'Noto Serif JP', serif;;
+=======
 .h2text {
     align-content: center;
     padding-bottom: 20px;
@@ -12,6 +16,7 @@ h1{
     background-color: paleturquoise;
     background-image: url(assets/images/testfoodlogo.png);
     background-size: cover;
+>>>>>>> 498beb42c8f5b403d916b2455006ee7ea698bdcd
 }
 
 
