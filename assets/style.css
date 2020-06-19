@@ -10,7 +10,7 @@ h1{
 
 .h2text {
     align-content: center;
-    padding-bottom: 20px;
+    padding-bottom: 60px;
 }
 
 
@@ -22,6 +22,7 @@ h1{
  
 /* First Page Classes & IDs*/
 #firstPage{
+    padding-top: 80px;
     display: none;
 }
 
@@ -71,7 +72,6 @@ h1{
 #searchBtn{
     color: darkslategray;
     border-color: #626E7D;
-
 }
 
 /* Second Page Classes & IDs */
