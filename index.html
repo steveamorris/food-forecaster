@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Food Forecaster</title>
     <link rel="stylesheet" href="assets/style.css" />
     <link
       rel="stylesheet"
@@ -42,7 +42,7 @@
               id="vegan"
               class="form-check-input"
               type="checkbox"
-              value="option1"
+              value="vegan"
             />
             <label class="form-check-label" for="inlineCheckbox1">Vegan</label>
           </div>
@@ -53,7 +53,7 @@
               id="vegetarian"
               class="form-check-input"
               type="checkbox"
-              value="option1"
+              value="vegetarian"
             />
             <label class="form-check-label" for="inlineCheckbox1"
               >Vegetarian</label
@@ -66,7 +66,7 @@
               id="peanut-allergy"
               class="form-check-input"
               type="checkbox"
-              value="option1"
+              value="peanut-free"
             />
             <label class="form-check-label" for="inlineCheckbox1"
               >Peanut Allergy</label
@@ -79,7 +79,7 @@
               id="tree-nut-allergy"
               class="form-check-input"
               type="checkbox"
-              value="option1"
+              value="tree-nut-free"
             />
             <label class="form-check-label" for="inlineCheckbox1"
               >Tree Nut Allergy</label
@@ -92,7 +92,7 @@
               id="dairy-intolerance"
               class="form-check-input"
               type="checkbox"
-              value="option1"
+              value="dairy free"
             />
             <label class="form-check-label" for="inlineCheckbox1"
               >Dairy Intolerance</label
@@ -167,9 +167,7 @@
           <blockquote class="blockquote mb-0">
               <!-- obviously change this to not be placecage -->
               <img src="https://www.placecage.com/200/300" alt="place cage">
-        <div id="recipe-name" class="card-header">
-          Recipe Name
-        </div>
+        
         <!-- hardcoded test recipe -->
         <div class="card-body">
           <blockquote id="ingredients-box" class="blockquote mb-0">
@@ -188,11 +186,11 @@
       </div>
     </div>
   </body>
+  <script src="https://momentjs.com/downloads/moment.js"></script>
   <script
     src="https://code.jquery.com/jquery-3.5.1.min.js"
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
     crossorigin="anonymous"
   ></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="script.js"></script>
 </html>
