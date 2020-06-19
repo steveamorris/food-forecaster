@@ -80,13 +80,14 @@ $(document).ready(function () {
       var recipesResult = (response.hits);
       console.log(recipesResult);
       var resultCounter = 0;
+
       for (var i = 0; i < 5; i++) {
         var recipeEl = $("<li>");
         recipeEl.addClass("listRecipe");
-        recipeEl.attr("data-index", recipesResult[i]);
+        recipeEl.attr("data-index", JSON.stringify(recipesResult[i].recipe));
+        console.log(recipesResult[i])
         recipeEl.text(recipesResult[i].recipe.label);
         $("#recipeList").append(recipeEl);
-
 
       }
 
@@ -94,36 +95,30 @@ $(document).ready(function () {
 
   };
 
-  function displayRecipe() {
-    console.log($(this).val());
-  }
-
+//add a listner for all buttons of class recipes
   $(document).on("click", ".listRecipe", displayRecipe);
   
-
-// })
-
-
   // Click event for when the search button is clicked
   $("#searchBtn").on("click", citySearch);
+  
 
-function switchDisplay(toDisplay){
-  if(toDisplay === "firstPage"){
-  $("#firstPage").attr("style","display: block;")
-  $("#secondPage").attr("style","display: none;")
-  $("#thirdPage").attr("style","display: none;")
+
+  //function to switcht the display of the page
+  function switchDisplay(toDisplay) {
+    if (toDisplay === "firstPage") {
+      $("#firstPage").attr("style", "display: block;");
+      $("#secondPage").attr("style", "display: none;");
+      $("#thirdPage").attr("style", "display: none;");
+    } else if (toDisplay === "secondPage") {
+      $("#firstPage").attr("style", "display: none;");
+      $("#secondPage").attr("style", "display: block;");
+      $("#thirdPage").attr("style", "display: none;");
+    } else if (toDisplay === "thirdPage") {
+      $("#firstPage").attr("style", "display: none;");
+      $("#secondPage").attr("style", "display: none;");
+      $("#thirdPage").attr("style", "display: block;");
+    }
   }
-  else if(toDisplay === "secondPage"){
-    $("#firstPage").attr("style","display: none;")
-  $("#secondPage").attr("style","display: block;")
-  $("#thirdPage").attr("style","display: none;")
-  }
-  else if(toDisplay === "thirdPage"){
-  $("#firstPage").attr("style","display: none;")
-  $("#secondPage").attr("style","display: none;")
-  $("#thirdPage").attr("style","display: block;")
-  }
-}
 
   //Function for searching a city and getting data and displaying data on the weather
   function citySearch(event) {
@@ -138,8 +133,8 @@ function switchDisplay(toDisplay){
         switchDisplay("secondPage");
         lat = position.coords.latitude;
         lon = position.coords.longitude;
-        lat = lat.toFixed(2)
-        lon = lon.toFixed(2)
+        lat = lat.toFixed(2);
+        lon = lon.toFixed(2);
 
         var queryURLCurrent =
           "https://api.openweathermap.org/data/2.5/weather?lat=" +
@@ -162,7 +157,7 @@ function switchDisplay(toDisplay){
           var iconEl = $("<img>");
           iconEl.attr(
             "src",
-            "http://openweathermap.org/img/w/" +
+            "https://openweathermap.org/img/w/" +
               response.weather[0].icon +
               ".png"
           );
@@ -185,5 +180,38 @@ function switchDisplay(toDisplay){
         alert("Geo Location not supported");
       }
     );
+  }
+
+  //assuming that there is a recipe array and a list that someone clicked
+  function displayRecipe() {
+    //get the recipe selected
+    var selectedRecipe = $(this).attr("data-index")
+    selectedRecipe = JSON.parse(selectedRecipe)
+    //change the name, url, and img to the data from the recipe
+    console.log(selectedRecipe)
+
+    $("#recipe-name").text(selectedRecipe.label)
+    $("#recipe-url").text("Recipe URL: " + selectedRecipe.url)
+    $("#recipeImg").attr("src", selectedRecipe.image)
+    $("#recipeImg").attr("alt", selectedRecipe.label)
+    console.log(selectedRecipe.label)
+    console.log(selectedRecipe.url)
+    console.log(selectedRecipe.image)
+    //change the ingredients box to include the ingrediants needed
+    $("#ingredients-box").empty();
+    var ingredientsHeader = $("<h5>Ingrediants:<h5>")
+    $("#ingredients-box").append(ingredientsHeader);
+    var ingredientsList = $("<ul>");
+
+    //add each recipe to the list
+    for(var i = 0; i <selectedRecipe.ingredientLines.length;i++){
+      var newingredient = $("<li>")
+      newingredient.text(selectedRecipe.ingredientLines[i]);
+      ingredientsList.append(newingredient) //maybe prepend
+    }
+    //append the list to the recipe
+    $("#ingredients-box").append(ingredientsList)
+    //switch the display to the third page
+    switchDisplay("thirdPage");
   }
 });
