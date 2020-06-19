@@ -8,7 +8,47 @@ $(document).ready(function () {
   var appId = "21bc4c2c";
   var appKey = "5729809d1a9d20acc68325bd3944c334";
   var searchTerm = "&q=chicken";
+  var dietRestrict = [];
 
+  function getDietRestrictions() {
+    if($("#vegan").prop("checked") == true){
+      console.log("Vegan is checked.");
+      dietRestrict.push("vegan");
+  }
+  else if($(this).prop("checked") == false){
+      console.log("Checkbox is unchecked.");
+  }
+  if($("#vegetarian").prop("checked") == true){
+    console.log("vegetarian is checked.");
+    dietRestrict.push("vegetarian");
+}
+else if($(this).prop("checked") == false){
+    console.log("Checkbox is unchecked.");
+}
+if($("#peanut-allergy").prop("checked") == true){
+  console.log("peanut-allergy is checked.");
+  dietRestrict.push("peanut-free");
+}
+else if($(this).prop("checked") == false){
+  console.log("Checkbox is unchecked.");
+}
+if($("#tree-nut-allergy").prop("checked") == true){
+  console.log("tree-nut-allergy is checked.");
+  dietRestrict.push("tree-nut-free");
+}
+else if($(this).prop("checked") == false){
+  console.log("Checkbox is unchecked.");
+}
+if($("#dairy-intolerance").prop("checked") == true){
+  console.log("dairy-intolerance is checked.");
+  dietRestrict.push("dairy-free");
+}
+else if($(this).prop("checked") == false){
+  console.log("Checkbox is unchecked.");
+}
+console.log(dietRestrict);
+  }
+// end of getDietRestrictions
   var queryURL =
     "https://api.edamam.com/search?app_id=21bc4c2c&app_key=5729809d1a9d20acc68325bd3944c334" +
     searchTerm;
@@ -22,6 +62,7 @@ $(document).ready(function () {
 
     // Click event for when the search button is clicked
   $("#searchBtn").on("click", citySearch);
+  $("#searchBtn").on("click", getDietRestrictions);
 
   //Function for searching a city and getting data and displaying data on the weather
   function citySearch(event) {
