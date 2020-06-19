@@ -3,23 +3,27 @@ h1{
     text-align: center;
 }
 
-<<<<<<< HEAD
 .container {
     font-family: 'Noto Serif JP', serif;;
-=======
-.h2text {
+
+}
+    .h2text {
     align-content: center;
     padding-bottom: 20px;
 }
 
-#banner{
+/* #banner{
     background-color: paleturquoise;
-    background-image: url(assets/images/testfoodlogo.png);
+    background-image: url("https://i.imgur.com/zhFhXaS.png?1");
     background-size: cover;
->>>>>>> 498beb42c8f5b403d916b2455006ee7ea698bdcd
+} */
+
+#banner {
+    box-sizing: border-box !important;
+    margin-left: 90px !important;
+    padding-left: 350px !important;
 }
-
-
+ 
 /* First Page Classes & IDs*/
 #firstPage{
 
@@ -63,12 +67,15 @@ h1{
 }
 
 #searchBtn:hover{
-    background-color:paleturquoise ;
+    background-color: #626E7D;
     color: black;
+    border-color: #626E7D;
 }
 
 #searchBtn{
     color: darkslategray;
+    border-color: #626E7D;
+
 }
 
 /* Second Page Classes & IDs */
