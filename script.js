@@ -9,50 +9,71 @@ $(document).ready(function () {
   var appKey = "5729809d1a9d20acc68325bd3944c334";
   var searchTerm = "&q=chicken";
   var dietRestrict = [];
-
-  function getDietRestrictions() {
-    if ($("#vegan").prop("checked") == true) {
-      console.log("Vegan is checked.");
-      dietRestrict.push("vegan");
-    } else if ($("#vegan").prop("checked") == false) {
-      console.log("Checkbox is unchecked.");
-    }
-    if ($("#vegetarian").prop("checked") == true) {
-      console.log("vegetarian is checked.");
-      dietRestrict.push("vegetarian");
-    } else if ($("#vegetarian").prop("checked") == false) {
-      console.log("Checkbox is unchecked.");
-    }
-    if ($("#peanut-allergy").prop("checked") == true) {
-      console.log("peanut-allergy is checked.");
-      dietRestrict.push("peanut-free");
-    } else if ($("#peanut-allergy").prop("checked") == false) {
-      console.log("Checkbox is unchecked.");
-    }
-    if ($("#tree-nut-allergy").prop("checked") == true) {
-      console.log("tree-nut-allergy is checked.");
-      dietRestrict.push("tree-nut-free");
-    } else if ($("#tree-nut-allergy").prop("checked") == false) {
-      console.log("Checkbox is unchecked.");
-    }
-    if ($("#dairy-intolerance").prop("checked") == true) {
-      console.log("dairy-intolerance is checked.");
-      dietRestrict.push("dairy-free");
-    } else if ($("#dairy-intolerance").prop("checked") == false) {
-      console.log("Checkbox is unchecked.");
-    }
-    console.log(dietRestrict);
-  }
-  // end of getDietRestrictions
   var queryURL =
     "https://api.edamam.com/search?app_id=21bc4c2c&app_key=5729809d1a9d20acc68325bd3944c334" +
     searchTerm;
-  $.ajax({
-    url: queryURL,
-    method: "GET",
-  }).then(function (response) {
-    console.log(response);
-  });
+    // + veganRestrict + vegetarianRestrict + peanutRestrict + treeNutRestrict + sugarRestrict
+  var veganRestrict = "";
+  var vegetarianRestrict = "";
+  var peanutRestrict = "";
+  var treeNutRestrict = "";
+  var sugarRestrict = "";
+
+  function getDietRestrictions() {
+    queryURL = "https://api.edamam.com/search?app_id=21bc4c2c&app_key=5729809d1a9d20acc68325bd3944c334" +
+    searchTerm;
+    if ($("#vegan").prop("checked") == true) {
+       var veganRestrict = "&health=vegan";
+       queryURL = queryURL + veganRestrict;
+    } else if ($("#vegan").prop("checked") == false) {
+      console.log("Checkbox is unchecked.");
+      queryURL = queryURL;
+    }
+    if ($("#vegetarian").prop("checked") == true) {
+      console.log("vegetarian is checked.");
+      vegetarianRestrict = "&health=vegetarian";
+      queryURL = queryURL + vegetarianRestrict;
+    } else if ($("#vegetarian").prop("checked") == false) {
+      console.log("Checkbox is unchecked.");
+      queryURL = queryURL;
+    }
+    if ($("#peanut-allergy").prop("checked") == true) {
+      console.log("peanut-allergy is checked.");
+      peanutRestrict = "&health=peanut-free";
+      queryURL = queryURL + peanutRestrict;
+
+    } else if ($("#peanut-allergy").prop("checked") == false) {
+      console.log("Checkbox is unchecked.");
+      queryURL = queryURL;
+    }
+    if ($("#tree-nut-allergy").prop("checked") == true) {
+      console.log("tree-nut-allergy is checked.");
+      treeNutRestrict = "&health=tree-nut-free";
+      queryURL = queryURL + treeNutRestrict;
+    } else if ($("#tree-nut-allergy").prop("checked") == false) {
+      console.log("Checkbox is unchecked.");
+      queryURL = queryURL;
+    }
+    if ($("#sugar-conscious").prop("checked") == true) {
+      console.log("dairy-intolerance is checked.");
+      sugarRestrict = "&health=sugar-conscious";
+      queryURL = queryURL + sugarRestrict;
+
+    } else if ($("#dairy-intolerance").prop("checked") == false) {
+      console.log("Checkbox is unchecked.");
+      queryURL = queryURL;
+    }
+    console.log(queryURL);
+    // queryURL = '';
+  }
+  // end of getDietRestrictions
+
+  // $.ajax({
+  //   url: queryURL,
+  //   method: "GET",
+  // }).then(function (response) {
+  //   console.log(response);
+  // });
 
   // Click event for when the search button is clicked
   $("#searchBtn").on("click", citySearch);
