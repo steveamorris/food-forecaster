@@ -17,6 +17,7 @@ h1{
 
 .container {
     font-family: 'Noto Serif JP', serif;;
+    color:#474f55;
 
 }
 
@@ -42,7 +43,7 @@ h1{
 }
 
 #searchDiv {
-    padding-left: 190px;
+    padding-right: 180px;
 }
 
 #logo{
@@ -103,6 +104,7 @@ h1{
     /* Weather box that displays the current weather */
 #weather-card{
     border-color: black;
+    background-color: #CEE9FF;
    
 }
 #weatherbox{
@@ -142,7 +144,7 @@ h1{
 }
 
 #recipe-card{
-    
+   background-color: #CEE9FF; 
 
 }
 
