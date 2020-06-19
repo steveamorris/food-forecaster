@@ -3,9 +3,45 @@ h1{
     text-align: center;
 }
 
+.container {
+    font-family: 'Noto Serif JP', serif;;
+
+}
+
+.h2text {
+    align-content: center;
+    padding-bottom: 60px;
+}
+
+
+#banner {
+    box-sizing: border-box !important;
+    margin-left: 90px !important;
+    padding-left: 350px !important;
+    padding-bottom: 30px;
+}
+ 
 /* First Page Classes & IDs*/
 #firstPage{
+    display: block;
+    padding-left: 190px;
+    
+}
 
+#searchDiv {
+    padding-left: 190px;
+}
+
+#logo{
+    text-align: center;
+    height: 250px;
+    width: 250px;
+}
+    /* Check boxes for dietary restrictions */
+
+.checkboxes{
+    text-align: justify;
+    padding: 10px;
 }
 
 #vegan{
@@ -28,18 +64,38 @@ h1{
 
 }
 
+    /* Search bar and button to find weather forecast */
 #search-bar{
   
 }
 
-#searchBtn{
+#searchBtn:hover{
+    background-color: #626E7D;
+    color: black;
+    border-color: #626E7D;
+}
 
+#searchBtn{
+    color: darkslategray;
+    border-color: #626E7D;
 }
 
 /* Second Page Classes & IDs */
 
 #secondPage{
-    
+    display: none;
+    padding-left: 190px;
+}
+
+    /* Weather box that displays the current weather */
+#weather-card{
+    border-color: black;
+   
+}
+#weatherbox{
+   padding-bottom: 20px; 
+   padding-top: 30px;
+
 }
 
 #currentCity{
@@ -59,6 +115,21 @@ h1{
 }
 
 #UVIndex {
+
+}
+
+    /* Box that holds the recipe lists to choose from */
+#recipe-row {
+    padding-top: 50px;
+   
+}
+
+#recipe-banner{
+
+}
+
+#recipe-card{
+    
 
 }
 
@@ -82,13 +153,34 @@ h1{
     display: none;
 }
 
+    /* Div that holds the recipe name and ingredients box */
 
-
-
-.list-recipes{
+#recipe-name{
 
 }
 
-#recipeList{
+    /* Box that holds the ingredients and recipe steps */
 
+#recipeImg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+}
+
+#ingredients-box{
+
+}
+
+    /* Back to recipes button */
+
+#goBackBtn:hover{
+    background-color: #626E7D;
+    color: black;
+    border-color: #626E7D;
+}
+
+#goBackBtn {
+    color: darkslategray;
+    border-color: #626E7D;
 }
