@@ -3,6 +3,11 @@ h1{
     text-align: center;
 }
 
+.container {
+    font-family: 'Noto Serif JP', serif;;
+}
+
+
 /* First Page Classes & IDs*/
 #firstPage{
 

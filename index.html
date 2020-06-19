@@ -26,11 +26,12 @@
       integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
       crossorigin="anonymous"
     ></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&display=swap" rel="stylesheet">
   </head>
   <body>
     <!-- header -->
-    <div class="jumbotron">
-      <h1 class="display-4">Food Forecaster</h1>
+    <div class="jumbotron" style="background-image: url>
+      <h1 class="display-4" style="font-size: 80px; font-family: 'Noto Serif JP', serif; color: white;">Food Forecaster</h1>
     </div>
     <!-- checkboxes for dietary restrictions -->
     <div class="container" id="firstPage">
@@ -89,13 +90,13 @@
         <div class="col-md-12">
           <div class="form-check form-check-inline">
             <input
-              id="dairy-intolerance"
+              id="sugar-conscious"
               class="form-check-input"
               type="checkbox"
-              value="dairy free"
+              value="sugar conscious"
             />
             <label class="form-check-label" for="inlineCheckbox1"
-              >Dairy Intolerance</label
+              >Sugar Conscious</label
             >
           </div>
         </div>
@@ -133,7 +134,6 @@
               <p>Temperature: <span id="temperature"></span></p>
               <p>Humidity: <span id="humidity"></span></p>
               <p>Wind Speed: <span id="windspeed"></span></p>
-              <p>UV Index: <span id="UVIndex"></span></p>
             </div>
           </div>
         </div>
