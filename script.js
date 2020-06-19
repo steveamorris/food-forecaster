@@ -63,17 +63,46 @@ $(document).ready(function () {
       console.log("Checkbox is unchecked.");
       queryURL = queryURL;
     }
-    console.log(queryURL);
+    // console.log(queryURL);
+    // return queryURL;
+    getRecipes();
+    
     // queryURL = '';
   }
   // end of getDietRestrictions
+  function getRecipes(){
+    // console.log("queryURL inside getRecipe" + queryURL);
+    $.ajax({
+      url: queryURL,
+      method: "GET",
+    }).then(function (response) {
+      // console.log(response);
+      var recipesResult = (response.hits);
+      console.log(recipesResult);
+      var resultCounter = 0;
+      for (var i = 0; i < 5; i++) {
+        var recipeEl = $("<li>");
+        recipeEl.addClass("listRecipe");
+        recipeEl.attr("data-index", recipesResult[i]);
+        recipeEl.text(recipesResult[i].recipe.label);
+        $("#recipeList").append(recipeEl);
 
-  // $.ajax({
-  //   url: queryURL,
-  //   method: "GET",
-  // }).then(function (response) {
-  //   console.log(response);
-  // });
+
+      }
+
+    }); 
+
+  };
+
+  function displayRecipe() {
+    console.log($(this).val());
+  }
+
+  $(document).on("click", ".listRecipe", displayRecipe);
+  
+
+// })
+
 
   // Click event for when the search button is clicked
   $("#searchBtn").on("click", citySearch);
