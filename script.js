@@ -78,14 +78,12 @@ $(document).ready(function () {
     }).then(function (response) {
       // console.log(response);
       var recipesResult = (response.hits);
-      console.log(recipesResult);
       var resultCounter = 0;
 
       for (var i = 0; i < 5; i++) {
         var recipeEl = $("<li>");
         recipeEl.addClass("listRecipe");
         recipeEl.attr("data-index", JSON.stringify(recipesResult[i].recipe));
-        console.log(recipesResult[i])
         recipeEl.text(recipesResult[i].recipe.label);
         $("#recipeList").append(recipeEl);
 
@@ -100,7 +98,12 @@ $(document).ready(function () {
   
   // Click event for when the search button is clicked
   $("#searchBtn").on("click", citySearch);
-  
+
+  //click event for returning to the recipe page
+  $("#goBackBtn").on("click", function(event){
+    event.preventDefault()
+    switchDisplay("secondPage");
+  })
 
 
   //function to switcht the display of the page
@@ -148,7 +151,6 @@ $(document).ready(function () {
           url: queryURLCurrent,
           method: "GET",
         }).then(function (response) {
-          console.log(response);
           //change the city name to the date and time
           $("#currentCity").text(
             response.name + " " + moment().format("MM/DD/YYYY")
@@ -161,7 +163,7 @@ $(document).ready(function () {
               response.weather[0].icon +
               ".png"
           );
-          //get different weather data
+          //get different weather data some to be used
           var temp = response.main.temp;
           var feelsLike = response.main.feels_like;
           var humidity = response.main.humidity;
@@ -188,15 +190,11 @@ $(document).ready(function () {
     var selectedRecipe = $(this).attr("data-index")
     selectedRecipe = JSON.parse(selectedRecipe)
     //change the name, url, and img to the data from the recipe
-    console.log(selectedRecipe)
 
     $("#recipe-name").text(selectedRecipe.label)
     $("#recipe-url").text("Recipe URL: " + selectedRecipe.url)
     $("#recipeImg").attr("src", selectedRecipe.image)
     $("#recipeImg").attr("alt", selectedRecipe.label)
-    console.log(selectedRecipe.label)
-    console.log(selectedRecipe.url)
-    console.log(selectedRecipe.image)
     //change the ingredients box to include the ingrediants needed
     $("#ingredients-box").empty();
     var ingredientsHeader = $("<h5>Ingrediants:<h5>")
