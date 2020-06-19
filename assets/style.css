@@ -1,8 +1,8 @@
 /* Global classes */
-body {
+/* body {
     background-image: url('assets/images/cool-background.png');
 
-}
+} */
 
 h1{
     text-align: center;
@@ -31,6 +31,7 @@ h1{
     margin-left: 90px !important;
     padding-left: 350px !important;
     padding-bottom: 30px;
+    background-color: url("assets/images/cool-background.png");
 }
  
 /* First Page Classes & IDs*/
