@@ -57,6 +57,24 @@ $(document).ready(function () {
   // Click event for when the search button is clicked
   $("#searchBtn").on("click", citySearch);
 
+function switchDisplay(toDisplay){
+  if(toDisplay === "firstPage"){
+  $("#firstPage").attr("style","display: block;")
+  $("#secondPage").attr("style","display: none;")
+  $("#thirdPage").attr("style","display: none;")
+  }
+  else if(toDisplay === "secondPage"){
+    $("#firstPage").attr("style","display: none;")
+  $("#secondPage").attr("style","display: block;")
+  $("#thirdPage").attr("style","display: none;")
+  }
+  else if(toDisplay === "thirdPage"){
+  $("#firstPage").attr("style","display: none;")
+  $("#secondPage").attr("style","display: none;")
+  $("#thirdPage").attr("style","display: block;")
+  }
+}
+
   //Function for searching a city and getting data and displaying data on the weather
   function citySearch(event) {
     event.preventDefault();
@@ -67,6 +85,7 @@ $(document).ready(function () {
     //get current geolocation
     navigator.geolocation.getCurrentPosition(
       function (position) {
+        switchDisplay("secondPage");
         lat = position.coords.latitude;
         lon = position.coords.longitude;
         lat = lat.toFixed(2)
