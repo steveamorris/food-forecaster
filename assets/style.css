@@ -1,7 +1,19 @@
 /* Global classes */
+body {
+    background-image: url('assets/images/cool-background.png');
+
+}
+
 h1{
     text-align: center;
 }
+
+.navbar-brand {
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
+  }
+
 
 .container {
     font-family: 'Noto Serif JP', serif;;
@@ -142,9 +154,13 @@ background-color: ;
 
 #pageThree{
     display: ;
+    padding-bottom: 50px;
 }
 
     /* Div that holds the recipe name and ingredients box */
+#recipe-card-result{
+ margin-top: 50px  ;
+}
 
 #recipe-name{
 

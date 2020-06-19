@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Food Forecaster</title>
-    <link rel="stylesheet" href="assets/style.css" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="assets/style.css" />
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -29,10 +29,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&display=swap" rel="stylesheet">
   </head>
   <body>
+      <style>
+          body{
+              background-image: url('assets/images/cool-background.png');
+          }
+      </style>
     <!-- header -->
-    <div id="banner">
+    <!-- Just an image -->
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="assets/images/logo_transparent.png" width="250" height="250" alt="" loading="lazy">
+    </a>
+  </nav>
+
+    <!-- <div id="banner">
         <img src="https://i.imgur.com/zhFhXaS.png?2" title="source: imgur.com" class="center" /></a>
-    </div>
+    </div> -->
     <!-- checkboxes for dietary restrictions -->
     <div class="container" id="firstPage">
       <div class="row h2text">
@@ -157,7 +169,7 @@
     </div>
     <!-- recipes page -->
     <div class="container" id="thirdPage">
-      <div class="card">
+      <div id="recipe-card-result" class="card">
         <div class="card-header">
           <h5><span>Recipe Name</span></h5>
           <h6><span>Recipe URL: </span></h6>
