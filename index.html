@@ -128,8 +128,8 @@
     <div class="container" id="secondPage">
       <div class="row">
         <div class="col-md-10">
-          <div class="card">
-            <div class="card-body">
+          <div id="weather-card" class="card">
+            <div id="weatherbox" class="card-body">
               <h3><span id="currentCity"></span></h3>
               <p>Temperature: <span id="temperature"></span></p>
               <p>Humidity: <span id="humidity"></span></p>
@@ -140,9 +140,9 @@
       </div>
       <!-- recipes card to pull in edamam -->
       <div class="row">
-        <div class="col-md-12">
+        <div id="recipe-row" class="col-md-12">
           <div class="card" id="recipe-card">
-            <div class="card-header">
+            <div id="recipe-banner" class="card-header">
               <h2>Recipes</h2>
             </div>
             <div class="card-body">
@@ -166,7 +166,7 @@
         <div class="card-body">
           <blockquote class="blockquote mb-0">
               <!-- obviously change this to not be placecage -->
-              <img src="https://i.imgur.com/vNETUfM.jpg" alt="food">
+              <img id="recipeImg" src="https://i.imgur.com/vNETUfM.jpg" alt="food">
         
         <!-- hardcoded test recipe -->
         <div class="card-body">

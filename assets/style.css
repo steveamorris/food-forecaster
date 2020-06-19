@@ -23,6 +23,7 @@ h1{
 /* First Page Classes & IDs*/
 #firstPage{
     padding-top: 80px;
+    display: none;
 }
 
 #logo{
@@ -76,10 +77,19 @@ h1{
 /* Second Page Classes & IDs */
 
 #secondPage{
-    display: none;
+    display: none
 }
 
     /* Weather box that displays the current weather */
+#weather-card{
+    border-color: black;
+    border-style: ;
+}
+#weatherbox{
+   padding-bottom: 20px; 
+
+}
+
 #currentCity{
 
 }
@@ -101,7 +111,16 @@ h1{
 }
 
     /* Box that holds the recipe lists to choose from */
+#recipe-row {
+    padding-top: 50px;
+}
+
+#recipe-banner{
+background-color: ;
+}
+
 #recipe-card{
+
 
 }
 
@@ -122,6 +141,7 @@ h1{
 /* Third Page Classes & IDs */
 
 #pageThree{
+    display: ;
 }
 
     /* Div that holds the recipe name and ingredients box */
@@ -131,6 +151,13 @@ h1{
 }
 
     /* Box that holds the ingredients and recipe steps */
+
+#recipeImg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+}
 
 #ingredients-box{
 
