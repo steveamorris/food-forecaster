@@ -7,16 +7,12 @@ h1{
     font-family: 'Noto Serif JP', serif;;
 
 }
-    .h2text {
+
+.h2text {
     align-content: center;
     padding-bottom: 20px;
 }
 
-/* #banner{
-    background-color: paleturquoise;
-    background-image: url("https://i.imgur.com/zhFhXaS.png?1");
-    background-size: cover;
-} */
 
 #banner {
     box-sizing: border-box !important;
@@ -26,7 +22,6 @@ h1{
  
 /* First Page Classes & IDs*/
 #firstPage{
-
 }
 
 #logo{
@@ -143,6 +138,13 @@ h1{
 
     /* Back to recipes button */
 
-#goBackBtn{
+#goBackBtn:hover{
+    background-color: #626E7D;
+    color: black;
+    border-color: #626E7D;
+}
 
+#goBackBtn {
+    color: darkslategray;
+    border-color: #626E7D;
 }
