@@ -30,7 +30,7 @@
   </head>
   <body>
     <!-- header -->
-    <div class="jumbotron" style="background-image: url>
+    <div class="jumbotron" style="background-image: url">
       <h1 class="display-4" style="font-size: 80px; font-family: 'Noto Serif JP', serif; color: white;">Food Forecaster</h1>
     <div id="banner" class="jumbotron">
       <h1 class="display-4">Food Forecaster</h1>
@@ -161,15 +161,15 @@
     <div class="container" id="thirdPage">
       <div class="card">
         <div class="card-header">
-          <h5><span>Recipe Name</span></h5>
-          <h6><span>Recipe URL: </span></h6>
+          <h5 id="recipe-name">Recipe Name</h5>
+          <h6 id="recipe-url">Recipe URL: </h6>
         </div>
         <!-- hardcoded test recipe -->
         <div class="card-body">
           <blockquote class="blockquote mb-0">
               <!-- obviously change this to not be placecage -->
-              <img src="https://www.placecage.com/200/300" alt="place cage">
-        
+              <img src="https://www.placecage.com/200/300" alt="place cage" id="recipe-image">
+          </blockquote>
         <!-- hardcoded test recipe -->
         <div class="card-body">
           <blockquote id="ingredients-box" class="blockquote mb-0">

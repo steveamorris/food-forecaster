@@ -44,36 +44,37 @@ $(document).ready(function () {
     console.log(dietRestrict);
   }
   // end of getDietRestrictions
-  var queryURL =
-    "https://api.edamam.com/search?app_id=21bc4c2c&app_key=5729809d1a9d20acc68325bd3944c334" +
-    searchTerm;
-  $.ajax({
-    url: queryURL,
-    method: "GET",
-  }).then(function (response) {
-    console.log(response);
-  });
+  // var queryURL =
+  //   "https://api.edamam.com/search?app_id=21bc4c2c&app_key=5729809d1a9d20acc68325bd3944c334" +
+  //   searchTerm;
+  // $.ajax({
+  //   url: queryURL,
+  //   method: "GET",
+  // }).then(function (response) {
+  //   console.log(response);
+  // });
 
   // Click event for when the search button is clicked
   $("#searchBtn").on("click", citySearch);
+  //add a listner for all buttons of class recipes
+  $(document).on("click", ".recipes", selectRecipe);
 
-function switchDisplay(toDisplay){
-  if(toDisplay === "firstPage"){
-  $("#firstPage").attr("style","display: block;")
-  $("#secondPage").attr("style","display: none;")
-  $("#thirdPage").attr("style","display: none;")
+  //function to switcht the display of the page
+  function switchDisplay(toDisplay) {
+    if (toDisplay === "firstPage") {
+      $("#firstPage").attr("style", "display: block;");
+      $("#secondPage").attr("style", "display: none;");
+      $("#thirdPage").attr("style", "display: none;");
+    } else if (toDisplay === "secondPage") {
+      $("#firstPage").attr("style", "display: none;");
+      $("#secondPage").attr("style", "display: block;");
+      $("#thirdPage").attr("style", "display: none;");
+    } else if (toDisplay === "thirdPage") {
+      $("#firstPage").attr("style", "display: none;");
+      $("#secondPage").attr("style", "display: none;");
+      $("#thirdPage").attr("style", "display: block;");
+    }
   }
-  else if(toDisplay === "secondPage"){
-    $("#firstPage").attr("style","display: none;")
-  $("#secondPage").attr("style","display: block;")
-  $("#thirdPage").attr("style","display: none;")
-  }
-  else if(toDisplay === "thirdPage"){
-  $("#firstPage").attr("style","display: none;")
-  $("#secondPage").attr("style","display: none;")
-  $("#thirdPage").attr("style","display: block;")
-  }
-}
 
   //Function for searching a city and getting data and displaying data on the weather
   function citySearch(event) {
@@ -88,8 +89,8 @@ function switchDisplay(toDisplay){
         switchDisplay("secondPage");
         lat = position.coords.latitude;
         lon = position.coords.longitude;
-        lat = lat.toFixed(2)
-        lon = lon.toFixed(2)
+        lat = lat.toFixed(2);
+        lon = lon.toFixed(2);
 
         var queryURLCurrent =
           "https://api.openweathermap.org/data/2.5/weather?lat=" +
@@ -135,5 +136,35 @@ function switchDisplay(toDisplay){
         alert("Geo Location not supported");
       }
     );
+  }
+
+  //assuming that there is a recipe array and a list that someone clicked
+  function selectRecipe() {
+    //get the index of the recipe that was clicked
+    var index = $(this).attr("recipe-index")
+    //get the recipe selected
+    var selectedRecipe = recipe[index]
+    //change the name, url, and img to the data from the recipe
+    $("#recipe-name").text(selectedRecipe.label)
+    $("#recipe-url").text("Recipe URL: " + selectedRecipe.url)
+    $("#recipe-img").attr("src", selectedRecipe.image)
+    $("#recipe-img").attr("alt", selectedRecipe.label)
+    //change the ingredients box to include the ingrediants needed
+    $("#ingredients-box").empty();
+    var ingredientsHeader = $("<h5>Ingrediants<h5>")
+    $("#ingredients-box").append(ingredientsHeader);
+    var ingredientsList = $("<ul>");
+
+    //add each recipe to the list
+    for(var i = 0; i <selectedRecipe.ingredientLines.length;i++){
+      var newingredient = $("<li>")
+      newingredient.text(selectedRecipe.ingredientLines[i]);
+      ingredientsList.append(newingredient) //maybe prepend
+    }
+    //append the list to the recipe
+    $("#ingredients-box").append(ingredientsList)
+    //switch the display to the third page
+    switchDisplay(thirdPage);
+
   }
 });
