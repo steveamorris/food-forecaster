@@ -57,49 +57,64 @@ $(document).ready(function () {
   // Click event for when the search button is clicked
   $("#searchBtn").on("click", citySearch);
 
-
   //Function for searching a city and getting data and displaying data on the weather
   function citySearch(event) {
     event.preventDefault();
     getDietRestrictions();
 
-    //get city value and make a url of it
-    var city = $("#search-bar").val();
-    var queryURLCurrent =
-      "https://api.openweathermap.org/data/2.5/weather?q=" +
-      city +
-      "&units=imperial&appid=6f1f4727eeab75aa99bbdae6e23dda36";
-    // var queryURLCurrent =
-    //   "https://api.openweathermap.org/data/2.5/weather?q=Atlanta&units=imperial&appid=6f1f4727eeab75aa99bbdae6e23dda36";
+    var lon;
+    var lat;
+    //get current geolocation
+    navigator.geolocation.getCurrentPosition(
+      function (position) {
+        lat = position.coords.latitude;
+        lon = position.coords.longitude;
+        lat = lat.toFixed(2)
+        lon = lon.toFixed(2)
 
-    //ajax call to get the current weather
-    $.ajax({
-      url: queryURLCurrent,
-      method: "GET",
-    }).then(function (response) {
-      //change the city name to the date and time
-      $("#currentCity").text(
-        response.name + " " + moment().format("MM/DD/YYYY")
-      );
+        var queryURLCurrent =
+          "https://api.openweathermap.org/data/2.5/weather?lat=" +
+          lat +
+          "&lon=" +
+          lon +
+          "&units=imperial&appid=6f1f4727eeab75aa99bbdae6e23dda36";
 
-      //get the icon of the weather
-      var iconEl = $("<img>");
-      iconEl.attr(
-        "src",
-        "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png"
-      );
-      //get different weather data
-      var temp = response.main.temp;
-      var feelsLike = response.main.feels_like;
-      var humidity = response.main.humidity;
-      var description = response.weather[0].main;
-      var pressure = response.main.pressure;
-      var wind = response.wind.speed;
-      //append the weather data
-      $("#currentCity").append(iconEl);
-      $("#temperature").text(response.main.temp + " F");
-      $("#humidity").text(response.main.humidity + "%");
-      $("#windspeed").text(response.wind.speed + " MPH");
-    });
+        //ajax call to get the current weather
+        $.ajax({
+          url: queryURLCurrent,
+          method: "GET",
+        }).then(function (response) {
+          console.log(response);
+          //change the city name to the date and time
+          $("#currentCity").text(
+            response.name + " " + moment().format("MM/DD/YYYY")
+          );
+          //get the icon of the weather
+          var iconEl = $("<img>");
+          iconEl.attr(
+            "src",
+            "http://openweathermap.org/img/w/" +
+              response.weather[0].icon +
+              ".png"
+          );
+          //get different weather data
+          var temp = response.main.temp;
+          var feelsLike = response.main.feels_like;
+          var humidity = response.main.humidity;
+          var description = response.weather[0].main;
+          var pressure = response.main.pressure;
+          var wind = response.wind.speed;
+          //append the weather data
+          $("#currentCity").append(iconEl);
+          $("#temperature").text(response.main.temp + " F");
+          $("#humidity").text(response.main.humidity + "%");
+          $("#windspeed").text(response.wind.speed + " MPH");
+        });
+      },
+      //call if geolocation  is not specified
+      function () {
+        alert("Geo Location not supported");
+      }
+    );
   }
 });
