@@ -9,55 +9,99 @@ $(document).ready(function () {
   var appKey = "5729809d1a9d20acc68325bd3944c334";
   var searchTerm = "&q=chicken";
   var dietRestrict = [];
+  var queryURL =
+    "https://api.edamam.com/search?app_id=21bc4c2c&app_key=5729809d1a9d20acc68325bd3944c334" +
+    searchTerm;
+    // + veganRestrict + vegetarianRestrict + peanutRestrict + treeNutRestrict + sugarRestrict
+  var veganRestrict = "";
+  var vegetarianRestrict = "";
+  var peanutRestrict = "";
+  var treeNutRestrict = "";
+  var sugarRestrict = "";
 
   function getDietRestrictions() {
+    queryURL = "https://api.edamam.com/search?app_id=21bc4c2c&app_key=5729809d1a9d20acc68325bd3944c334" +
+    searchTerm;
     if ($("#vegan").prop("checked") == true) {
-      console.log("Vegan is checked.");
-      dietRestrict.push("vegan");
+       var veganRestrict = "&health=vegan";
+       queryURL = queryURL + veganRestrict;
     } else if ($("#vegan").prop("checked") == false) {
       console.log("Checkbox is unchecked.");
+      queryURL = queryURL;
     }
     if ($("#vegetarian").prop("checked") == true) {
       console.log("vegetarian is checked.");
-      dietRestrict.push("vegetarian");
+      vegetarianRestrict = "&health=vegetarian";
+      queryURL = queryURL + vegetarianRestrict;
     } else if ($("#vegetarian").prop("checked") == false) {
       console.log("Checkbox is unchecked.");
+      queryURL = queryURL;
     }
     if ($("#peanut-allergy").prop("checked") == true) {
       console.log("peanut-allergy is checked.");
-      dietRestrict.push("peanut-free");
+      peanutRestrict = "&health=peanut-free";
+      queryURL = queryURL + peanutRestrict;
+
     } else if ($("#peanut-allergy").prop("checked") == false) {
       console.log("Checkbox is unchecked.");
+      queryURL = queryURL;
     }
     if ($("#tree-nut-allergy").prop("checked") == true) {
       console.log("tree-nut-allergy is checked.");
-      dietRestrict.push("tree-nut-free");
+      treeNutRestrict = "&health=tree-nut-free";
+      queryURL = queryURL + treeNutRestrict;
     } else if ($("#tree-nut-allergy").prop("checked") == false) {
       console.log("Checkbox is unchecked.");
+      queryURL = queryURL;
     }
-    if ($("#dairy-intolerance").prop("checked") == true) {
+    if ($("#sugar-conscious").prop("checked") == true) {
       console.log("dairy-intolerance is checked.");
-      dietRestrict.push("dairy-free");
+      sugarRestrict = "&health=sugar-conscious";
+      queryURL = queryURL + sugarRestrict;
+
     } else if ($("#dairy-intolerance").prop("checked") == false) {
       console.log("Checkbox is unchecked.");
+      queryURL = queryURL;
     }
-    console.log(dietRestrict);
+    // console.log(queryURL);
+    // return queryURL;
+    getRecipes();
+    
+    // queryURL = '';
   }
   // end of getDietRestrictions
-  // var queryURL =
-  //   "https://api.edamam.com/search?app_id=21bc4c2c&app_key=5729809d1a9d20acc68325bd3944c334" +
-  //   searchTerm;
-  // $.ajax({
-  //   url: queryURL,
-  //   method: "GET",
-  // }).then(function (response) {
-  //   console.log(response);
-  // });
+  function getRecipes(){
+    // console.log("queryURL inside getRecipe" + queryURL);
+    $.ajax({
+      url: queryURL,
+      method: "GET",
+    }).then(function (response) {
+      // console.log(response);
+      var recipesResult = (response.hits);
+      console.log(recipesResult);
+      var resultCounter = 0;
 
+      for (var i = 0; i < 5; i++) {
+        var recipeEl = $("<li>");
+        recipeEl.addClass("listRecipe");
+        recipeEl.attr("data-index", JSON.stringify(recipesResult[i].recipe));
+        console.log(recipesResult[i])
+        recipeEl.text(recipesResult[i].recipe.label);
+        $("#recipeList").append(recipeEl);
+
+      }
+
+    }); 
+
+  };
+
+//add a listner for all buttons of class recipes
+  $(document).on("click", ".listRecipe", displayRecipe);
+  
   // Click event for when the search button is clicked
   $("#searchBtn").on("click", citySearch);
-  //add a listner for all buttons of class recipes
-  $(document).on("click", ".recipes", selectRecipe);
+  
+
 
   //function to switcht the display of the page
   function switchDisplay(toDisplay) {
@@ -113,7 +157,7 @@ $(document).ready(function () {
           var iconEl = $("<img>");
           iconEl.attr(
             "src",
-            "http://openweathermap.org/img/w/" +
+            "https://openweathermap.org/img/w/" +
               response.weather[0].icon +
               ".png"
           );
@@ -139,19 +183,23 @@ $(document).ready(function () {
   }
 
   //assuming that there is a recipe array and a list that someone clicked
-  function selectRecipe() {
-    //get the index of the recipe that was clicked
-    var index = $(this).attr("recipe-index")
+  function displayRecipe() {
     //get the recipe selected
-    var selectedRecipe = recipe[index]
+    var selectedRecipe = $(this).attr("data-index")
+    selectedRecipe = JSON.parse(selectedRecipe)
     //change the name, url, and img to the data from the recipe
+    console.log(selectedRecipe)
+
     $("#recipe-name").text(selectedRecipe.label)
     $("#recipe-url").text("Recipe URL: " + selectedRecipe.url)
-    $("#recipe-img").attr("src", selectedRecipe.image)
-    $("#recipe-img").attr("alt", selectedRecipe.label)
+    $("#recipeImg").attr("src", selectedRecipe.image)
+    $("#recipeImg").attr("alt", selectedRecipe.label)
+    console.log(selectedRecipe.label)
+    console.log(selectedRecipe.url)
+    console.log(selectedRecipe.image)
     //change the ingredients box to include the ingrediants needed
     $("#ingredients-box").empty();
-    var ingredientsHeader = $("<h5>Ingrediants<h5>")
+    var ingredientsHeader = $("<h5>Ingrediants:<h5>")
     $("#ingredients-box").append(ingredientsHeader);
     var ingredientsList = $("<ul>");
 
@@ -164,7 +212,6 @@ $(document).ready(function () {
     //append the list to the recipe
     $("#ingredients-box").append(ingredientsList)
     //switch the display to the third page
-    switchDisplay(thirdPage);
-
+    switchDisplay("thirdPage");
   }
 });

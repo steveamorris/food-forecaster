@@ -3,26 +3,33 @@ h1{
     text-align: center;
 }
 
-<<<<<<< HEAD
 .container {
     font-family: 'Noto Serif JP', serif;;
-=======
+
+}
+
 .h2text {
     align-content: center;
-    padding-bottom: 20px;
-}
-
-#banner{
-    background-color: paleturquoise;
-    background-image: url(assets/images/testfoodlogo.png);
-    background-size: cover;
->>>>>>> 498beb42c8f5b403d916b2455006ee7ea698bdcd
+    padding-bottom: 60px;
 }
 
 
+#banner {
+    box-sizing: border-box !important;
+    margin-left: 90px !important;
+    padding-left: 350px !important;
+    padding-bottom: 30px;
+}
+ 
 /* First Page Classes & IDs*/
 #firstPage{
+    display: block;
+    padding-left: 190px;
+    
+}
 
+#searchDiv {
+    padding-left: 190px;
 }
 
 #logo{
@@ -63,21 +70,34 @@ h1{
 }
 
 #searchBtn:hover{
-    background-color:paleturquoise ;
+    background-color: #626E7D;
     color: black;
+    border-color: #626E7D;
 }
 
 #searchBtn{
     color: darkslategray;
+    border-color: #626E7D;
 }
 
 /* Second Page Classes & IDs */
 
 #secondPage{
     display: none;
+    padding-left: 190px;
 }
 
     /* Weather box that displays the current weather */
+#weather-card{
+    border-color: black;
+    border-style: ;
+}
+#weatherbox{
+   padding-bottom: 20px; 
+   padding-top: 30px;
+
+}
+
 #currentCity{
 
 }
@@ -99,7 +119,17 @@ h1{
 }
 
     /* Box that holds the recipe lists to choose from */
+#recipe-row {
+    padding-top: 50px;
+   
+}
+
+#recipe-banner{
+background-color: ;
+}
+
 #recipe-card{
+    
 
 }
 
@@ -119,7 +149,8 @@ h1{
 
 /* Third Page Classes & IDs */
 
-#pageThree{
+#thirdPage{
+    display: none;
 }
 
     /* Div that holds the recipe name and ingredients box */
@@ -130,12 +161,26 @@ h1{
 
     /* Box that holds the ingredients and recipe steps */
 
+#recipeImg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+}
+
 #ingredients-box{
 
 }
 
     /* Back to recipes button */
 
-#goBackBtn{
+#goBackBtn:hover{
+    background-color: #626E7D;
+    color: black;
+    border-color: #626E7D;
+}
 
+#goBackBtn {
+    color: darkslategray;
+    border-color: #626E7D;
 }
