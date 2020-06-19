@@ -28,6 +28,10 @@ h1{
     
 }
 
+#searchDiv {
+    padding-left: 190px;
+}
+
 #logo{
     text-align: center;
     height: 250px;
