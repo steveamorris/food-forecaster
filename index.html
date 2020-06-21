@@ -36,15 +36,15 @@
       </style>
     <!-- header -->
     <!-- Just an image -->
-<nav class="navbar navbar-transparent bg-transparent">
-    <a class="navbar-brand mx-auto" href="#">
-      <img src="assets/images/logo_transparent.png" width="250" height="250" alt="" loading="lazy">
-    </a>
-  </nav>
 
     <!-- <div id="banner">
-        <img src="https://i.imgur.com/zhFhXaS.png?2" title="source: imgur.com" class="center" /></a>
+      <img src="assets/images/logo_transparent.png" width="250" height="250" alt="logo" loading="lazy" id="logo">
     </div> -->
+ 
+
+    <div id="banner">
+        <img src="https://i.imgur.com/zhFhXaS.png?2" title="source: imgur.com" class="center" /></a>
+    </div>
     <!-- checkboxes for dietary restrictions -->
     <div class="container" id="firstPage">
       <div class="row h2text">
@@ -105,7 +105,7 @@
               id="sugar-conscious"
               class="form-check-input"
               type="checkbox"
-              value="sugar conscious"
+              value="sugar-conscious"
             />
             <label class="form-check-label" for="inlineCheckbox1"
               >Sugar Conscious</label
@@ -115,22 +115,9 @@
       </div>
       <!-- search for city input -->
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12" id="searchDiv">
           <form class="form-inline">
-            <input
-              id="search-bar"
-              class="form-control mr-sm-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button
-              id="searchBtn"
-              class="btn btn-outline-success my-2 my-sm-0"
-              type="submit"
-            >
-              Search City
-            </button>
+            <button type="button" class="btn btn-outline-success btn-lg btn-block" id="searchBtn">Get Recipes</button>
           </form>
         </div>
       </div>
@@ -159,6 +146,9 @@
             </div>
             <div class="card-body">
               <blockquote class="blockquote mb-0"></blockquote>
+              <div>
+                <ul id="recipeList" class="list-recipes"></ul>
+              </div>
             </div>
           </div>
         </div>
@@ -171,8 +161,8 @@
     <div class="container" id="thirdPage">
       <div id="recipe-card-result" class="card">
         <div class="card-header">
-          <h5><span>Recipe Name</span></h5>
-          <h6><span>Recipe URL: </span></h6>
+          <h5 id="recipe-name">Recipe Name</h5>
+          <h6 id="recipe-url">Recipe URL: </h6>
         </div>
         <!-- hardcoded test recipe -->
         <div class="card-body">
