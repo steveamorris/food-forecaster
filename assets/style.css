@@ -8,11 +8,11 @@ h1{
     text-align: center;
 }
 
-.navbar-brand {
+/* .navbar-brand {
     transform: translateX(-50%);
     left: 50%;
     position: absolute;
-  }
+  } */
 
 
 .container {
@@ -110,7 +110,8 @@ h1{
 #weatherbox{
    padding-bottom: 20px; 
    padding-top: 30px;
-
+   text-align: center;
+    background-color: #CEE9FF;
 }
 
 #currentCity{
@@ -166,7 +167,6 @@ h1{
 
 #thirdPage{
     display: none;
-
 }
 
     /* Div that holds the recipe name and ingredients box */
