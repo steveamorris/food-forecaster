@@ -8,21 +8,22 @@ h1{
     text-align: center;
 }
 
-.navbar-brand {
+/* .navbar-brand {
     transform: translateX(-50%);
     left: 50%;
     position: absolute;
-  }
+  } */
 
 
 .container {
     font-family: 'Noto Serif JP', serif;;
+    color: #474F55;
 
 }
 
 .h2text {
     align-content: center;
-    padding-bottom: 20px;
+    padding-bottom: 60px;
 }
 
 
@@ -30,11 +31,14 @@ h1{
     box-sizing: border-box !important;
     margin-left: 90px !important;
     padding-left: 350px !important;
+    padding-bottom: 30px;
 }
  
 /* First Page Classes & IDs*/
 #firstPage{
-    display: none;
+    display: block;
+    padding-left: 190px;
+    
 }
 
 #logo{
@@ -83,23 +87,26 @@ h1{
 #searchBtn{
     color: darkslategray;
     border-color: #626E7D;
-
 }
 
 /* Second Page Classes & IDs */
 
 #secondPage{
-    display: none
+    display: none;
+    padding-left: 190px;
 }
 
     /* Weather box that displays the current weather */
 #weather-card{
     border-color: black;
-    border-style: ;
+    border-radius: 5px;
+    background-color: transparent;
 }
 #weatherbox{
    padding-bottom: 20px; 
-
+   padding-top: 30px;
+   text-align: center;
+    background-color: #CEE9FF;
 }
 
 #currentCity{
@@ -125,6 +132,7 @@ h1{
     /* Box that holds the recipe lists to choose from */
 #recipe-row {
     padding-top: 50px;
+   
 }
 
 #recipe-banner{
@@ -132,7 +140,7 @@ background-color: ;
 }
 
 #recipe-card{
-
+    
 
 }
 
@@ -152,9 +160,8 @@ background-color: ;
 
 /* Third Page Classes & IDs */
 
-#pageThree{
-    display: ;
-    padding-bottom: 50px;
+#thirdPage{
+    display: none;
 }
 
     /* Div that holds the recipe name and ingredients box */
