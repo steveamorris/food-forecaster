@@ -189,7 +189,9 @@ $(document).ready(function () {
     switchDisplay("thirdPage");
   }
 function weatherToFood(){
-  var temp = 80
+  // console.log("weather to food " + temp)
+
+  var temp = 82
   var temp1 = temp.toString()
   var temp2 = temp1[1]
   temp1 = temp1[0]
@@ -200,59 +202,63 @@ function weatherToFood(){
 
   var calories;
   var time;
-  var queryMeal
+  var queryMeal;
+  var secondQuery;
+  var thirdQuery;
   
   switch (temp1){
-    case "1": queryMeal = "chicken"; break;
-    case "2": queryMeal = "chicken"; break;
-    case "3": queryMeal = "chicken"; break;
-    case "4": queryMeal = "chicken"; break;
-    case "5": queryMeal = "chicken"; break;
-    case "6": queryMeal = "chicken"; break;
-    case "7": queryMeal = "chicken"; break;
-    case "8": queryMeal = "Fish"; break;
-    case "9": queryMeal = "chicken"; break;
-    default: queryMeal = "chicken"; break;
+    case "1": calories = "&calories=1101+"; break;
+    case "2": calories = "&calories=1001-1100"; break;
+    case "3": calories = "&calories=901-1000"; break;
+    case "4": calories = "&calories=801-900"; break;
+    case "5": calories = "&calories=701-800"; break;
+    case "6": calories = "&calories=601-700"; break;
+    case "7": calories = "&calories=501-600"; break;
+    case "8": calories = "&calories=401-500"; break;
+    case "9": calories = "&calories=301-400"; break;
+    default: calories = "&calories=301-400"; break;
   }
   switch (temp2){
-    case "0": calories = "1000";  break;
-    case "1": calories = "chicken"; break;
-    case "2": calories = "chicken"; break;
-    case "3": calories = "chicken"; break;
-    case "4": calories = "chicken"; break;
-    case "5": calories = "chicken"; break;
-    case "6": calories = "chicken"; break;
-    case "7": calories = "chicken"; break;
-    case "8": calories = "chicken"; break;
-    case "9": calories = "chicken"; break;
-    default: calories = "chicken"; break;
+    case "0": queryMeal = "&q=lamb";  break;
+    case "1": queryMeal = "&q=chicken"; break;
+    case "2": queryMeal = "&q=roast"; break;
+    case "3": queryMeal = "&q=pork"; break;
+    case "4": queryMeal = "&q=turkey"; break;
+    case "5": queryMeal = "&q=chicken"; break;
+    case "6": queryMeal = "&q=beef"; break;
+    case "7": queryMeal = "&q=chicken"; break;
+    case "8": queryMeal = "&q=fish"; break;
+    case "9": queryMeal = "&q=cheese"; break;
+    default: queryMeal = "&q=chicken"; break;
   }
   switch(main){
-    case "Thunderstorm": queryMeal = "chicken"; break;
-    case "Drizzle": queryMeal = "chicken"; break;
-    case "Rain": queryMeal = "chicken"; break;
-    case "Snow": queryMeal = "chicken"; break;
-    case "Clear": queryMeal = "chicken"; break;
-    case "Clouds": queryMeal = "chicken"; break;
-    default: queryMeal = "chicken"; break;
+    case "Thunderstorm": secondQuery = "noodles"; break;
+    case "Drizzle": secondQuery = "sandwich"; break;
+    case "Rain": secondQuery = "casserole"; break;
+    case "Snow": secondQuery = "hearty"; break;
+    case "Clear": secondQuery = "sandwich"; break;
+    case "Clouds": secondQuery = "dinner"; break;
+    default: secondQuery = "sandwich"; break;
   }
-  switch(wind){
-    case ".": queryMeal = "chicken"; break;
-    case "1": queryMeal = "chicken"; break;
-    case "2": queryMeal = "chicken"; break;
-    case "3": queryMeal = "chicken"; break;
-    case "4": queryMeal = "chicken"; break;
-    case "5": queryMeal = "chicken"; break;
-    case "6": queryMeal = "chicken"; break;
-    case "7": queryMeal = "chicken"; break;
-    case "8": queryMeal = "chicken"; break;
-    case "9": queryMeal = "chicken"; break;
-    default: queryMeal = "chicken"; break;
-  }
-  console.log(queryMeal)
-  console.log(temp2)
-  console.log(calories)
+  // switch(wind){
+  //   case ".": thirdQuery = "chicken"; break;
+  //   case "1": thirdQuery = "chicken"; break;
+  //   case "2": thirdQuery = "chicken"; break;
+  //   case "3": thirdQuery = "chicken"; break;
+  //   case "4": thirdQuery = "chicken"; break;
+  //   case "5": thirdQuery = "chicken"; break;
+  //   case "6": thirdQuery = "chicken"; break;
+  //   case "7": thirdQuery = "chicken"; break;
+  //   case "8": thirdQuery = "chicken"; break;
+  //   case "9": thirdQuery = "chicken"; break;
+  //   default: thirdQuery = "chicken"; break;
+  // }
+  console.log(temp2);
+  console.log(queryMeal);
+  // console.log(temp1);
+  // console.log(temp2);
+  console.log(calories);
 }
-//weatherToFood()
+
 
 });
