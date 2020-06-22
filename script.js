@@ -1,9 +1,4 @@
 $(document).ready(function () {
-  //api key: 0ce7367ab45a6a2137dd7b5c89797579
-  //Application Id: 1dd4c6ab
-
-  //Steve edamam apikey "ec4f08b81e8c6fcb3007f7ac8d71f2a9"
-  // Steve edamam apiid "9113a917"
   var queryURL =
     "https://api.edamam.com/search?app_id=21bc4c2c&app_key=5729809d1a9d20acc68325bd3944c334";
   // + veganRestrict + vegetarianRestrict + peanutRestrict + treeNutRestrict + sugarRestrict
@@ -203,52 +198,44 @@ $(document).ready(function () {
       calories +
       queryMeal +
       secondQuery;
-    console.log(queryURL);
     if ($("#vegan").prop("checked") == true) {
       var veganRestrict = "&health=vegan";
       queryURL = queryURL + veganRestrict;
     }
     if ($("#vegetarian").prop("checked") == true) {
-      console.log("vegetarian is checked.");
       var vegetarianRestrict = "&health=vegetarian";
       queryURL = queryURL + vegetarianRestrict;
     }
     if ($("#peanut-allergy").prop("checked") == true) {
-      console.log("peanut-allergy is checked.");
       var peanutRestrict = "&health=peanut-free";
       queryURL = queryURL + peanutRestrict;
     }
     if ($("#tree-nut-allergy").prop("checked") == true) {
-      console.log("tree-nut-allergy is checked.");
       treeNutRestrict = "&health=tree-nut-free";
       queryURL = queryURL + treeNutRestrict;
     }
     if ($("#sugar-conscious").prop("checked") == true) {
-      console.log("dairy-intolerance is checked.");
       sugarRestrict = "&health=sugar-conscious";
       queryURL = queryURL + sugarRestrict;
     }
     getRecipes();
-
-    // queryURL = '';
   }
   // end of getDietRestrictions
+
+  // Function get recipes from json
   function getRecipes() {
-    // console.log("queryURL inside getRecipe" + queryURL);
     queryURL = queryURL + calories + queryMeal + secondQuery;
-    console.log(queryURL);
+
     $.ajax({
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-      // console.log(response);
       var recipesResult = response.hits;
       var resultCounter = recipesResult.length;
 
       if (resultCounter > 6) {
         resultCounter = 5;
       }
-      console.log(response);
       for (var i = 0; i < resultCounter; i++) {
         var recipeEl = $("<li>");
         recipeEl.addClass("listRecipe");
