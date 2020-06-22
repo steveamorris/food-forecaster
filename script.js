@@ -267,7 +267,7 @@ $(document).ready(function () {
     //change the name, url, and img to the data from the recipe
 
     $("#recipe-name").text(selectedRecipe.label);
-    $("#recipe-url").text("Recipe URL: " + selectedRecipe.url);
+    $("#recipe-url").html("Recipe URL: <a href = " + selectedRecipe.url + ">See Full Recipe</a>");
     $("#recipeImg").attr("src", selectedRecipe.image);
     $("#recipeImg").attr("alt", selectedRecipe.label);
     //change the ingredients box to include the ingrediants needed
