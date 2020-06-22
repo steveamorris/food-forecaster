@@ -38,14 +38,20 @@ h1{
 } */
 
 #coverphoto {
-    background-image: url("https://i.imgur.com/Vz9Vw7K.png");
+    background-image: url("https://i.imgur.com/KP37h5V.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+  
+
+
     
 }
 #jumboContainer {
     margin-bottom: 150px;
+    height: fit-content;
+    width: auto;
+
 }
  
 /* First Page Classes & IDs*/
@@ -118,7 +124,7 @@ h1{
 
     /* Weather box that displays the current weather */
 #weather-card{
-    border-color: black;
+    border: 2px solid #626E7D;
     background-color: #CEE9FF;
    
 }
@@ -126,7 +132,8 @@ h1{
    padding-bottom: 20px; 
    padding-top: 30px;
    text-align: center;
-    background-color: #CEE9FF;
+   background-color: #CEE9FF;
+  
 }
 
 #currentCity{
@@ -161,6 +168,7 @@ h1{
 
 #recipe-card{
    background-color: #CEE9FF; 
+   border: 2px solid #626E7D;
 
 }
 
@@ -187,6 +195,9 @@ h1{
     /* Div that holds the recipe name and ingredients box */
 #recipe-card-result{
  margin-top: 50px  ;
+ background-color: #CEE9FF;
+
+ border: 2px solid #626E7D;
 }
 
 #recipe-name{
@@ -199,11 +210,13 @@ h1{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 25%;
-}
+    width: 30%;
+    border-color: #626E7D ;
+    border-radius: 25px;
+    border: 2px solid #626E7D;
+} 
 
-#ingredients-box{
-
+#ingredients-box {
 }
 
     /* Back to recipes button */
