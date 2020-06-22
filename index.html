@@ -159,11 +159,20 @@
     <div class="container" id="pageThree">
       <div class="card">
         <div class="card-header">
-          Recipe Name
+          <h5><span>Recipe Name</span></h5>
+          <h6><span>Recipe URL: </span></h6>
         </div>
         <!-- hardcoded test recipe -->
         <div class="card-body">
           <blockquote class="blockquote mb-0">
+              <!-- obviously change this to not be placecage -->
+              <img src="https://www.placecage.com/200/300" alt="place cage">
+        <div id="recipe-name" class="card-header">
+          Recipe Name
+        </div>
+        <!-- hardcoded test recipe -->
+        <div class="card-body">
+          <blockquote id="ingredients-box" class="blockquote mb-0">
               <h5>Ingredients</h5>
             <ul>
                 <li><h6>milk</h6></li>
@@ -171,13 +180,6 @@
                 <li><h6>butter</h6></li>
                 <li><h6>heavy cream</h6></li>
             </ul>
-            <h5>Step by step</h5>
-            <ol>
-                <li>mix milk, butter, eggs, and heavy cream in a bowl</li>
-                <li>pour into greased pan</li>
-                <li>bake for 20 minutes at 400 degrees</li>
-                <li>pour icing over once cooled/li>
-            </ol>
           </blockquote>
           <button type="button" class="btn btn-primary" id="goBackBtn">
             Go back to recipes page
@@ -191,5 +193,6 @@
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
     crossorigin="anonymous"
   ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="script.js"></script>
 </html>
