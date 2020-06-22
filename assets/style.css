@@ -36,14 +36,20 @@ h1{
 } */
 
 #coverphoto {
-    background-image: url("https://i.imgur.com/Vz9Vw7K.png");
+    background-image: url("https://i.imgur.com/KP37h5V.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+  
+
+
     
 }
 #jumboContainer {
     margin-bottom: 150px;
+    height: fit-content;
+    width: auto;
+
 }
  
 /* First Page Classes & IDs*/
