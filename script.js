@@ -272,7 +272,7 @@ $(document).ready(function () {
     $("#recipeImg").attr("alt", selectedRecipe.label);
     //change the ingredients box to include the ingrediants needed
     $("#ingredients-box").empty();
-    var ingredientsHeader = $("<h5>Ingrediants:<h5>");
+    var ingredientsHeader = $("<h5>Ingredients:<h5>");
     $("#ingredients-box").append(ingredientsHeader);
     var ingredientsList = $("<ul>");
 
