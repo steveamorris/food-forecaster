@@ -13,6 +13,9 @@ $(document).ready(function () {
     "https://api.edamam.com/search?app_id=21bc4c2c&app_key=5729809d1a9d20acc68325bd3944c334" +
     searchTerm;
     // + veganRestrict + vegetarianRestrict + peanutRestrict + treeNutRestrict + sugarRestrict
+    var calories;
+    var queryMeal;
+    var secondQuery;  
 
   function getDietRestrictions() {
     queryURL = "https://api.edamam.com/search?app_id=21bc4c2c&app_key=5729809d1a9d20acc68325bd3944c334" +
@@ -48,6 +51,8 @@ $(document).ready(function () {
   // end of getDietRestrictions
   function getRecipes(){
     // console.log("queryURL inside getRecipe" + queryURL);
+
+
     $.ajax({
       url: queryURL,
       method: "GET",
@@ -102,8 +107,6 @@ $(document).ready(function () {
   //Function for searching a city and getting data and displaying data on the weather
   function citySearch(event) {
     event.preventDefault();
-    getDietRestrictions();
-
     var lon;
     var lat;
     //get current geolocation
@@ -141,16 +144,17 @@ $(document).ready(function () {
           );
           //get different weather data some to be used
           var temp = response.main.temp;
-          var feelsLike = response.main.feels_like;
-          var humidity = response.main.humidity;
-          var description = response.weather[0].main;
-          var pressure = response.main.pressure;
-          var wind = response.wind.speed;
+          var main = response.weather[0].main;
           //append the weather data
           $("#currentCity").append(iconEl);
           $("#temperature").text(response.main.temp + " F");
           $("#humidity").text(response.main.humidity + "%");
           $("#windspeed").text(response.wind.speed + " MPH");
+
+          getDietRestrictions() 
+          weatherToFood(temp,main);
+
+
         });
       },
       //call if geolocation  is not specified
@@ -188,24 +192,15 @@ $(document).ready(function () {
     //switch the display to the third page
     switchDisplay("thirdPage");
   }
-function weatherToFood(){
-  // console.log("weather to food " + temp)
 
-  var temp = 82
+  //function to change the weather to a recipe
+function weatherToFood(temp,main){
+  //get the first two digits of the temp and the weather conditions
   var temp1 = temp.toString()
   var temp2 = temp1[1]
   temp1 = temp1[0]
-  var wind = 5.4
-  wind = wind.toString()
-  wind = wind[0];
-  var main = "Clear"
 
-  var calories;
-  var time;
-  var queryMeal;
-  var secondQuery;
-  var thirdQuery;
-  
+  //relate the first calorie count to the first digit
   switch (temp1){
     case "1": calories = "&calories=1101+"; break;
     case "2": calories = "&calories=1001-1100"; break;
@@ -218,6 +213,7 @@ function weatherToFood(){
     case "9": calories = "&calories=301-400"; break;
     default: calories = "&calories=301-400"; break;
   }
+  //add a query call depending on the second digit of temp
   switch (temp2){
     case "0": queryMeal = "&q=lamb";  break;
     case "1": queryMeal = "&q=chicken"; break;
@@ -231,34 +227,15 @@ function weatherToFood(){
     case "9": queryMeal = "&q=cheese"; break;
     default: queryMeal = "&q=chicken"; break;
   }
+  //add a second query call bacsed on the conditions
   switch(main){
-    case "Thunderstorm": secondQuery = "noodles"; break;
-    case "Drizzle": secondQuery = "sandwich"; break;
-    case "Rain": secondQuery = "casserole"; break;
-    case "Snow": secondQuery = "hearty"; break;
-    case "Clear": secondQuery = "sandwich"; break;
-    case "Clouds": secondQuery = "dinner"; break;
-    default: secondQuery = "sandwich"; break;
+    case "Thunderstorm": secondQuery = "&q=noodles"; break;
+    case "Drizzle": secondQuery = "&q=sandwich"; break;
+    case "Rain": secondQuery = "&q=casserole"; break;
+    case "Snow": secondQuery = "&q=hearty"; break;
+    case "Clear": secondQuery = "&q=sandwich"; break;
+    case "Clouds": secondQuery = "&q=dinner"; break;
+    default: secondQuery = "&q=sandwich"; break;
   }
-  // switch(wind){
-  //   case ".": thirdQuery = "chicken"; break;
-  //   case "1": thirdQuery = "chicken"; break;
-  //   case "2": thirdQuery = "chicken"; break;
-  //   case "3": thirdQuery = "chicken"; break;
-  //   case "4": thirdQuery = "chicken"; break;
-  //   case "5": thirdQuery = "chicken"; break;
-  //   case "6": thirdQuery = "chicken"; break;
-  //   case "7": thirdQuery = "chicken"; break;
-  //   case "8": thirdQuery = "chicken"; break;
-  //   case "9": thirdQuery = "chicken"; break;
-  //   default: thirdQuery = "chicken"; break;
-  // }
-  console.log(temp2);
-  console.log(queryMeal);
-  // console.log(temp1);
-  // console.log(temp2);
-  console.log(calories);
 }
-
-
 });
