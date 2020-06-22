@@ -124,7 +124,7 @@ h1{
 
     /* Weather box that displays the current weather */
 #weather-card{
-    border-color: black;
+    border: 2px solid #626E7D;
     background-color: #CEE9FF;
    
 }
@@ -133,6 +133,7 @@ h1{
    padding-top: 30px;
    text-align: center;
    background-color: #CEE9FF;
+  
 }
 
 #currentCity{
@@ -167,6 +168,7 @@ h1{
 
 #recipe-card{
    background-color: #CEE9FF; 
+   border: 2px solid #626E7D;
 
 }
 
@@ -194,6 +196,8 @@ h1{
 #recipe-card-result{
  margin-top: 50px  ;
  background-color: #CEE9FF;
+
+ border: 2px solid #626E7D;
 }
 
 #recipe-name{
