@@ -205,8 +205,10 @@ h1{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 25%;
-}
+    width: 30%;
+    border-color: #626E7D ;
+    border-radius: 25px;
+    border: 2px solid #626E7D;
 
 #ingredients-box{
 
