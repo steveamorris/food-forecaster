@@ -1,239 +1,132 @@
-/* Global classes */
-/* body {
-    background-image: url('assets/images/cool-background.png');
-
-} */
-
-h1{
-    text-align: center;
+h1 {
+  text-align: center;
 }
 
-/* .navbar-brand {
-    transform: translateX(-50%);
-    left: 50%;
-    position: absolute;
-  } */
-
-
 .container {
-    font-family: 'Noto Serif JP', serif;;
-    color:#474f55;
-
+  font-family: "Noto Serif JP", serif;
+  color: #474f55;
 }
 
 .h2text {
-    align-content: center;
-    padding-bottom: 60px;
+  align-content: center;
+  padding-bottom: 60px;
 }
-
-/* 
-#banner {
-    box-sizing: border-box !important; 
-    margin-left: 90px !important;
-    padding-left: 350px !important; 
-    padding-bottom: 30px; 
-    padding-left: 350px !important;
-    padding-bottom: 30px;
-    background-color: url("assets/images/cool-background.png");
-} */
 
 #coverphoto {
-    background-image: url("https://i.imgur.com/KP37h5V.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  
-
-
-    
+  background-image: url("https://i.imgur.com/KP37h5V.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 #jumboContainer {
-    margin-bottom: 150px;
-    height: fit-content;
-    width: auto;
-
+  margin-bottom: 150px;
+  height: fit-content;
+  width: auto;
 }
- 
+
 /* First Page Classes & IDs*/
-#firstPage{
-    display: block;
-    /* padding-left: 190px; */
-    
+#firstPage {
+  display: block;
+  /* padding-left: 190px; */
 }
 
 #searchDiv {
-    padding-right: 180px;
+  padding-right: 180px;
 }
 
-#logo{
-    text-align: center;
-    height: 250px;
-    width: 250px;
+#logo {
+  text-align: center;
+  height: 250px;
+  width: 250px;
 }
-    /* Check boxes for dietary restrictions */
+/* Check boxes for dietary restrictions */
 
-.checkboxes{
-    text-align: justify;
-    padding: 10px;
-}
-
-
-
-#vegan{
-
+.checkboxes {
+  text-align: justify;
+  padding: 10px;
 }
 
-#vegetarian{
+/* Search bar and button to find weather forecast */
 
+#searchBtn:hover {
+  background-color: #626e7d;
+  color: black;
+  border-color: #626e7d;
 }
 
-#peanut-allergy{
-
-}
-
-#tree-nut-allergy{
-
-}
-
-#dairy-intolerance{
-
-}
-
-    /* Search bar and button to find weather forecast */
-#search-bar{
-  
-}
-
-#searchBtn:hover{
-    background-color: #626E7D;
-    color: black;
-    border-color: #626E7D;
-}
-
-#searchBtn{
-    color: darkslategray;
-    border-color: #626E7D;
+#searchBtn {
+  color: darkslategray;
+  border-color: #626e7d;
 }
 
 /* Second Page Classes & IDs */
 
-#secondPage{
-    display: none;
-    /* padding-left: 190px; */
+#secondPage {
+  display: none;
+  /* padding-left: 190px; */
 }
 
-    /* Weather box that displays the current weather */
-#weather-card{
-    border: 2px solid #626E7D;
-    background-color: #CEE9FF;
-   
+/* Weather box that displays the current weather */
+#weather-card {
+  border: 2px solid #626e7d;
+  background-color: #cee9ff;
 }
-#weatherbox{
-   padding-bottom: 20px; 
-   padding-top: 30px;
-   text-align: center;
-   background-color: #CEE9FF;
-  
+#weatherbox {
+  padding-bottom: 20px;
+  padding-top: 30px;
+  text-align: center;
+  background-color: #cee9ff;
 }
 
-#currentCity{
-
-}
-
-#temperature{
-
-}
-
-#humidity{
-
-}
-
-#windspeed{
-
-}
-
-#UVIndex {
-
-}
-
-    /* Box that holds the recipe lists to choose from */
+/* Box that holds the recipe lists to choose from */
 #recipe-row {
-    padding-top: 50px;
-   
+  padding-top: 50px;
 }
 
-#recipe-banner{
-
-}
-
-#recipe-card{
-   background-color: #CEE9FF; 
-   border: 2px solid #626E7D;
-
-}
-
-#recipeList{
-
-}
-
-.list-recipes{
-    
+#recipe-card {
+  background-color: #cee9ff;
+  border: 2px solid #626e7d;
 }
 
 .card-header {
-    text-align: center;
+  text-align: center;
 }
-
-
 
 /* Third Page Classes & IDs */
 
-#thirdPage{
-    display: none;
+#thirdPage {
+  display: none;
 }
 
-    /* Div that holds the recipe name and ingredients box */
-#recipe-card-result{
- margin-top: 50px  ;
- background-color: #CEE9FF;
+/* Div that holds the recipe name and ingredients box */
+#recipe-card-result {
+  margin-top: 50px;
+  background-color: #cee9ff;
 
- border: 2px solid #626E7D;
+  border: 2px solid #626e7d;
 }
 
-#recipe-name{
+/* Box that holds the ingredients and recipe steps */
 
+#recipeImg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  border-color: #626e7d;
+  border-radius: 25px;
+  border: 2px solid #626e7d;
 }
 
-    /* Box that holds the ingredients and recipe steps */
+/* Back to recipes button */
 
-#recipeImg{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 30%;
-    border-color: #626E7D ;
-    border-radius: 25px;
-    border: 2px solid #626E7D;
-} 
-
-#ingredients-box {
-}
-
-    /* Back to recipes button */
-
-#goBackBtn:hover{
-    background-color: #626E7D;
-    color: black;
-    border-color: #626E7D;
+#goBackBtn:hover {
+  background-color: #626e7d;
+  color: black;
+  border-color: #626e7d;
 }
 
 #goBackBtn {
-    color: darkslategray;
-    border-color: #626E7D;
+  color: darkslategray;
+  border-color: #626e7d;
 }
-
-/* @media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px) 
-  and (-webkit-min-device-pixel-ratio: 3) {   */
-
