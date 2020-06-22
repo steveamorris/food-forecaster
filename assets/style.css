@@ -28,8 +28,10 @@ h1{
 
 /* 
 #banner {
-    box-sizing: border-box !important;
+    box-sizing: border-box !important; 
     margin-left: 90px !important;
+    padding-left: 350px !important; 
+    padding-bottom: 30px; 
     padding-left: 350px !important;
     padding-bottom: 30px;
     background-color: url("assets/images/cool-background.png");
@@ -68,6 +70,8 @@ h1{
     text-align: justify;
     padding: 10px;
 }
+
+
 
 #vegan{
 
