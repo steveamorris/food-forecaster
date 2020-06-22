@@ -26,12 +26,26 @@ h1{
     padding-bottom: 60px;
 }
 
-
+/* 
 #banner {
     box-sizing: border-box !important; 
     margin-left: 90px !important;
     padding-left: 350px !important; 
     padding-bottom: 30px; 
+    padding-left: 350px !important;
+    padding-bottom: 30px;
+    background-color: url("assets/images/cool-background.png");
+} */
+
+#coverphoto {
+    background-image: url("https://i.imgur.com/Vz9Vw7K.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+}
+#jumboContainer {
+    margin-bottom: 150px;
 }
  
 /* First Page Classes & IDs*/
@@ -204,3 +218,9 @@ h1{
     color: darkslategray;
     border-color: #626E7D;
 }
+
+/* @media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) {   */
+
