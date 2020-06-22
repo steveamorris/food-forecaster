@@ -10,8 +10,7 @@ $(document).ready(function () {
   var searchTerm = "&q=chicken";
   var dietRestrict = [];
   var queryURL =
-    "https://api.edamam.com/search?app_id=21bc4c2c&app_key=5729809d1a9d20acc68325bd3944c334" +
-    searchTerm;
+    "https://api.edamam.com/search?app_id=21bc4c2c&app_key=5729809d1a9d20acc68325bd3944c334";
     // + veganRestrict + vegetarianRestrict + peanutRestrict + treeNutRestrict + sugarRestrict
     var calories;
     var queryMeal;
@@ -19,7 +18,8 @@ $(document).ready(function () {
 
   function getDietRestrictions() {
     queryURL = "https://api.edamam.com/search?app_id=21bc4c2c&app_key=5729809d1a9d20acc68325bd3944c334" +
-    searchTerm;
+    calories + queryMeal + secondQuery;
+    console.log(queryURL);
     if ($("#vegan").prop("checked") == true) {
        var veganRestrict = "&health=vegan";
        queryURL = queryURL + veganRestrict;
@@ -150,9 +150,11 @@ $(document).ready(function () {
           $("#temperature").text(response.main.temp + " F");
           $("#humidity").text(response.main.humidity + "%");
           $("#windspeed").text(response.wind.speed + " MPH");
-
-          getDietRestrictions() 
           weatherToFood(temp,main);
+
+          getDietRestrictions();
+
+
 
 
         });
@@ -237,5 +239,6 @@ function weatherToFood(temp,main){
     case "Clouds": secondQuery = "&q=dinner"; break;
     default: secondQuery = "&q=sandwich"; break;
   }
+
 }
 });
