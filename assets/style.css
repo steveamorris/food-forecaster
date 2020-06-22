@@ -38,7 +38,7 @@ h1{
 /* First Page Classes & IDs*/
 #firstPage{
     display: block;
-    padding-left: 190px;
+    /* padding-left: 190px; */
     
 }
 
@@ -98,7 +98,7 @@ h1{
 
 #secondPage{
     display: none;
-    padding-left: 190px;
+    /* padding-left: 190px; */
 }
 
     /* Weather box that displays the current weather */
