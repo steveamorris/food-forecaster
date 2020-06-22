@@ -1,22 +1,23 @@
 /* Global classes */
-body {
+/* body {
     background-image: url('assets/images/cool-background.png');
 
-}
+} */
 
 h1{
     text-align: center;
 }
 
-.navbar-brand {
+/* .navbar-brand {
     transform: translateX(-50%);
     left: 50%;
     position: absolute;
-  }
+  } */
 
 
 .container {
     font-family: 'Noto Serif JP', serif;;
+    color:#474f55;
 
 }
 
@@ -25,23 +26,37 @@ h1{
     padding-bottom: 60px;
 }
 
-
+/* 
 #banner {
-    box-sizing: border-box !important;
+    box-sizing: border-box !important; 
     margin-left: 90px !important;
+    padding-left: 350px !important; 
+    padding-bottom: 30px; 
     padding-left: 350px !important;
     padding-bottom: 30px;
+    background-color: url("assets/images/cool-background.png");
+} */
+
+#coverphoto {
+    background-image: url("https://i.imgur.com/Vz9Vw7K.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+}
+#jumboContainer {
+    margin-bottom: 150px;
 }
  
 /* First Page Classes & IDs*/
 #firstPage{
     display: block;
-    padding-left: 190px;
+    /* padding-left: 190px; */
     
 }
 
 #searchDiv {
-    padding-left: 190px;
+    padding-right: 180px;
 }
 
 #logo{
@@ -55,6 +70,8 @@ h1{
     text-align: justify;
     padding: 10px;
 }
+
+
 
 #vegan{
 
@@ -96,18 +113,20 @@ h1{
 
 #secondPage{
     display: none;
-    padding-left: 190px;
+    /* padding-left: 190px; */
 }
 
     /* Weather box that displays the current weather */
 #weather-card{
     border-color: black;
+    background-color: #CEE9FF;
    
 }
 #weatherbox{
    padding-bottom: 20px; 
    padding-top: 30px;
-
+   text-align: center;
+    background-color: #CEE9FF;
 }
 
 #currentCity{
@@ -141,7 +160,7 @@ h1{
 }
 
 #recipe-card{
-    
+   background-color: #CEE9FF; 
 
 }
 
@@ -163,7 +182,6 @@ h1{
 
 #thirdPage{
     display: none;
-
 }
 
     /* Div that holds the recipe name and ingredients box */
@@ -200,3 +218,9 @@ h1{
     color: darkslategray;
     border-color: #626E7D;
 }
+
+/* @media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) {   */
+
