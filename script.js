@@ -227,32 +227,33 @@ function weatherToFood(){
     case "9": calories = "chicken"; break;
     default: calories = "chicken"; break;
   }
-  switch(main){
-    case "Thunderstorm": queryMeal = "chicken"; break;
-    case "Drizzle": queryMeal = "chicken"; break;
-    case "Rain": queryMeal = "chicken"; break;
-    case "Snow": queryMeal = "chicken"; break;
-    case "Clear": queryMeal = "chicken"; break;
-    case "Clouds": queryMeal = "chicken"; break;
-    default: queryMeal = "chicken"; break;
-  }
-  switch(wind){
-    case ".": queryMeal = "chicken"; break;
-    case "1": queryMeal = "chicken"; break;
-    case "2": queryMeal = "chicken"; break;
-    case "3": queryMeal = "chicken"; break;
-    case "4": queryMeal = "chicken"; break;
-    case "5": queryMeal = "chicken"; break;
-    case "6": queryMeal = "chicken"; break;
-    case "7": queryMeal = "chicken"; break;
-    case "8": queryMeal = "chicken"; break;
-    case "9": queryMeal = "chicken"; break;
-    default: queryMeal = "chicken"; break;
-  }
+  // switch(main){
+  //   case "Thunderstorm": queryMeal = "chicken"; break;
+  //   case "Drizzle": queryMeal = "chicken"; break;
+  //   case "Rain": queryMeal = "chicken"; break;
+  //   case "Snow": queryMeal = "chicken"; break;
+  //   case "Clear": queryMeal = "chicken"; break;
+  //   case "Clouds": queryMeal = "chicken"; break;
+  //   default: queryMeal = "chicken"; break;
+  // }
+  // switch(wind){
+  //   case ".": queryMeal = "chicken"; break;
+  //   case "1": queryMeal = "chicken"; break;
+  //   case "2": queryMeal = "chicken"; break;
+  //   case "3": queryMeal = "chicken"; break;
+  //   case "4": queryMeal = "chicken"; break;
+  //   case "5": queryMeal = "chicken"; break;
+  //   case "6": queryMeal = "chicken"; break;
+  //   case "7": queryMeal = "chicken"; break;
+  //   case "8": queryMeal = "chicken"; break;
+  //   case "9": queryMeal = "chicken"; break;
+  //   default: queryMeal = "chicken"; break;
+  // }
+
   console.log(queryMeal)
   console.log(temp2)
   console.log(calories)
 }
-//weatherToFood()
+weatherToFood()
 
 });
