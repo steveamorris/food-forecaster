@@ -3,14 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="assets/style.css" />
+
+<link rel='icon' href='assets/images/favicon.png' type='image/x-icon'/ >
+    <title>Food Forecaster</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="assets/style.css" />
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -26,98 +28,101 @@
       integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
       crossorigin="anonymous"
     ></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&display=swap" rel="stylesheet">
   </head>
   <body>
+      <style>
+          body{
+              background-image: url('assets/images/cool-background.png');
+          }
+      </style>
     <!-- header -->
-    <div class="jumbotron">
-      <h1 class="display-4">Food Forecaster</h1>
-    </div>
+    <!-- Just an image -->
+
+    <!-- <div id="banner">
+      <img src="assets/images/logo_transparent.png" width="250" height="250" alt="logo" loading="lazy" id="logo">
+    </div> -->
+
+    <!-- Just an image -->
+
+ 
+
+    <!-- <div id="banner">
+        <img src="https://i.imgur.com/zhFhXaS.png?2" title="source: imgur.com" class="center" /></a>
+    </div> -->
     <!-- checkboxes for dietary restrictions -->
     <div class="container" id="firstPage">
-      <div class="row">
-        <h2>Please select all dietary restrictions that apply:</h2>
-        <div class="col-md-12">
+      <div class="row h2text">
+        <h2 class="h2text">Please select all dietary restrictions that apply:</h2>
+        <div class="col-md-12 checkboxes">
           <div class="form-check form-check-inline">
             <input
               id="vegan"
               class="form-check-input"
               type="checkbox"
-              value="option1"
+              value="vegan"
             />
             <label class="form-check-label" for="inlineCheckbox1">Vegan</label>
           </div>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12 checkboxes">
           <div class="form-check form-check-inline">
             <input
               id="vegetarian"
               class="form-check-input"
               type="checkbox"
-              value="option1"
+              value="vegetarian"
             />
             <label class="form-check-label" for="inlineCheckbox1"
               >Vegetarian</label
             >
           </div>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12 checkboxes">
           <div class="form-check form-check-inline">
             <input
               id="peanut-allergy"
               class="form-check-input"
               type="checkbox"
-              value="option1"
+              value="peanut-free"
             />
             <label class="form-check-label" for="inlineCheckbox1"
               >Peanut Allergy</label
             >
           </div>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12 checkboxes">
           <div class="form-check form-check-inline">
             <input
               id="tree-nut-allergy"
               class="form-check-input"
               type="checkbox"
-              value="option1"
+              value="tree-nut-free"
             />
             <label class="form-check-label" for="inlineCheckbox1"
               >Tree Nut Allergy</label
             >
           </div>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12 checkboxes">
           <div class="form-check form-check-inline">
             <input
-              id="dairy-intolerance"
+              id="sugar-conscious"
               class="form-check-input"
               type="checkbox"
-              value="option1"
+              value="sugar-conscious"
             />
             <label class="form-check-label" for="inlineCheckbox1"
-              >Dairy Intolerance</label
+              >Sugar Conscious</label
             >
           </div>
         </div>
       </div>
       <!-- search for city input -->
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12" id="searchDiv">
           <form class="form-inline">
-            <input
-              id="search-bar"
-              class="form-control mr-sm-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button
-              id="searchBtn"
-              class="btn btn-outline-success my-2 my-sm-0"
-              type="submit"
-            >
-              Search City
-            </button>
+            <button type="button" class="btn btn-outline-success btn-lg btn-block" id="searchBtn">Get Recipes</button>
           </form>
         </div>
       </div>
@@ -127,26 +132,28 @@
     <div class="container" id="secondPage">
       <div class="row">
         <div class="col-md-10">
-          <div class="card">
-            <div class="card-body">
+          <div id="weather-card" class="card">
+            <div id="weatherbox" class="card-body">
               <h3><span id="currentCity"></span></h3>
               <p>Temperature: <span id="temperature"></span></p>
               <p>Humidity: <span id="humidity"></span></p>
               <p>Wind Speed: <span id="windspeed"></span></p>
-              <p>UV Index: <span id="UVIndex"></span></p>
             </div>
           </div>
         </div>
       </div>
       <!-- recipes card to pull in edamam -->
       <div class="row">
-        <div class="col-md-12">
+        <div id="recipe-row" class="col-md-12">
           <div class="card" id="recipe-card">
-            <div class="card-header">
+            <div id="recipe-banner" class="card-header">
               <h2>Recipes</h2>
             </div>
             <div class="card-body">
               <blockquote class="blockquote mb-0"></blockquote>
+              <div>
+                <ul id="recipeList" class="list-recipes"></ul>
+              </div>
             </div>
           </div>
         </div>
@@ -156,20 +163,18 @@
       </div>
     </div>
     <!-- recipes page -->
-    <div class="container" id="pageThree">
-      <div class="card">
+    <div class="container" id="thirdPage">
+      <div id="recipe-card-result" class="card">
         <div class="card-header">
-          <h5><span>Recipe Name</span></h5>
-          <h6><span>Recipe URL: </span></h6>
+          <h5 id="recipe-name">Recipe Name</h5>
+          <h6 id="recipe-url">Recipe URL: </h6>
         </div>
         <!-- hardcoded test recipe -->
         <div class="card-body">
           <blockquote class="blockquote mb-0">
               <!-- obviously change this to not be placecage -->
-              <img src="https://www.placecage.com/200/300" alt="place cage">
-        <div id="recipe-name" class="card-header">
-          Recipe Name
-        </div>
+              <img id="recipeImg" src="https://i.imgur.com/vNETUfM.jpg" alt="food">
+        
         <!-- hardcoded test recipe -->
         <div class="card-body">
           <blockquote id="ingredients-box" class="blockquote mb-0">
@@ -181,18 +186,22 @@
                 <li><h6>heavy cream</h6></li>
             </ul>
           </blockquote>
-          <button type="button" class="btn btn-primary" id="goBackBtn">
-            Go back to recipes page
-          </button>
+          <button
+              id="goBackBtn"
+              class="btn btn-outline-success my-2 my-sm-0"
+              type="go back"
+            >
+              Go back to recipe page
+            </button>
         </div>
       </div>
     </div>
   </body>
+  <script src="https://momentjs.com/downloads/moment.js"></script>
   <script
     src="https://code.jquery.com/jquery-3.5.1.min.js"
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
     crossorigin="anonymous"
   ></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="script.js"></script>
 </html>
