@@ -51,17 +51,21 @@ $(document).ready(function () {
   // end of getDietRestrictions
   function getRecipes(){
     // console.log("queryURL inside getRecipe" + queryURL);
-
-
+    queryURL = queryURL + calories + queryMeal + secondQuery;
+    console.log(queryURL)
     $.ajax({
       url: queryURL,
       method: "GET",
     }).then(function (response) {
       // console.log(response);
       var recipesResult = (response.hits);
-      var resultCounter = 0;
+      var resultCounter = recipesResult.length;
 
-      for (var i = 0; i < 5; i++) {
+      if(resultCounter > 6){
+        resultCounter = 5;
+      }
+      console.log(response)
+      for (var i = 0; i < resultCounter; i++) {
         var recipeEl = $("<li>");
         recipeEl.addClass("listRecipe");
         recipeEl.attr("data-index", JSON.stringify(recipesResult[i].recipe));
@@ -151,10 +155,9 @@ $(document).ready(function () {
           $("#humidity").text(response.main.humidity + "%");
           $("#windspeed").text(response.wind.speed + " MPH");
 
-          getDietRestrictions() 
           weatherToFood(temp,main);
-
-
+          getDietRestrictions() 
+          
         });
       },
       //call if geolocation  is not specified
@@ -220,12 +223,21 @@ function weatherToFood(temp,main){
     case "2": queryMeal = "&q=roast"; break;
     case "3": queryMeal = "&q=pork"; break;
     case "4": queryMeal = "&q=turkey"; break;
-    case "5": queryMeal = "&q=chicken"; break;
+    case "5": queryMeal = "&q=salad"; break;
     case "6": queryMeal = "&q=beef"; break;
-    case "7": queryMeal = "&q=chicken"; break;
+    case "7": queryMeal = "&q=tofu"; break;
     case "8": queryMeal = "&q=fish"; break;
     case "9": queryMeal = "&q=cheese"; break;
-    default: queryMeal = "&q=chicken"; break;
+    default: queryMeal = "&q=salad"; break;
+  }
+  //double check for vegetarian and vegan and remove the meat items
+  if($("#vegetarian").prop("checked") == true && (queryMeal !== "&q=salad" || queryMeal !== "&q=tofu"|| queryMeal !== "&q=cheese"))
+  {
+    queryMeal = "";
+  }
+  if($("#vegen").prop("checked") == true && (queryMeal !== "&q=salad" || queryMeal !== "&q=tofu"))
+  {
+    queryMeal = "";
   }
   //add a second query call bacsed on the conditions
   switch(main){
