@@ -126,7 +126,7 @@ h1{
    padding-bottom: 20px; 
    padding-top: 30px;
    text-align: center;
-    background-color: #CEE9FF;
+   background-color: #CEE9FF;
 }
 
 #currentCity{
@@ -187,6 +187,7 @@ h1{
     /* Div that holds the recipe name and ingredients box */
 #recipe-card-result{
  margin-top: 50px  ;
+ background-color: #CEE9FF;
 }
 
 #recipe-name{
