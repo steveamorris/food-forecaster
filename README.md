@@ -1,11 +1,11 @@
-# gt-project-1
+# gt-project-1 :
 Gt Bootcamp Project 1
 
-## Description 
+## Description :
 This is our app Food Forecaster that we developed for group project 1. This material is designed to meet the standards set by the GT Full-stack program homework requirements. It is built using Bootstrap, CSS, HTML, jQuery, Open Weather API and Edamam API. 
 
 
-## Table of Contents 
+## Table of Contents :
 
 * [Installation](#installation)
 * [Usage](#usage)
@@ -13,13 +13,13 @@ This is our app Food Forecaster that we developed for group project 1. This mate
 * [Collaborators](#collaborators)
 
 
-## Installation
+## Installation :
 
 1. Clone the repo on github. 
 2. Open the index.html file in your local web browser. 
 3. Once on the browser you will then be able to navigate through the app.
 
-## Usage 
+## Usage :
 
 [Deployed Portfolio Site](https://theendisfar.github.io/food-forecaster/)
 
@@ -32,7 +32,7 @@ This is our app Food Forecaster that we developed for group project 1. This mate
 ![alt text](assets/images/thirdpage.png) 
 
 
-## Collaborators
+## Collaborators :
 
 Frontend:
 Alexis Mollenkopf & 
@@ -44,7 +44,7 @@ Sam Dratch
 
 
 
-## License
+## License :
 
 MIT License
 
@@ -71,6 +71,6 @@ SOFTWARE. [MIT License](https://choosealicense.com/licenses/mit/#)
 
 ---
 
-## Badges
+## Badges :
 
 ![MITlicense](https://img.shields.io/badge/license-MIT-green)
